@@ -14,6 +14,7 @@ class Input extends Component {
   render () {
     return (
       <input
+        defaultValue={ this.props.value }
         name={ this.props.name }
         onChange={ e => this.props.onChange( e.target.value )}
         placeholder={ this.props.placeholder }
@@ -21,7 +22,6 @@ class Input extends Component {
           ...( coreStyle.regular || {}),
           ...( themeStyle.regular || {}),
         }}
-        value={ this.props.value }
       />
     );
   }

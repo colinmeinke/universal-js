@@ -8,8 +8,10 @@ const defaultProps = {
 };
 
 const propTypes = {
+  isUpdating: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   type: PropTypes.string,
+  updatingText: PropTypes.string.isRequired,
 };
 
 class Button extends Component {
@@ -19,10 +21,14 @@ class Button extends Component {
         style={{
           ...( coreStyle.regular || {}),
           ...( themeStyle.regular || {}),
+          ...( this.props.isUpdating ? {
+            ...( coreStyle.updating || {}),
+            ...( themeStyle.updating || {}),
+          } : {}),
         }}
         type={ this.props.type }
       >
-        { this.props.text }
+        { this.props.isUpdating ? this.props.updatingText : this.props.text }
       </button>
     );
   }

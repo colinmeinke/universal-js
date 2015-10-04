@@ -1,3 +1,5 @@
+import Color from 'color';
+
 import * as rootConfig from '../../common/style/config';
 
 const config = {
@@ -11,6 +13,13 @@ const config = {
       x: rootConfig.spacing.medium,
     },
   },
+  updating: {
+    color: {
+      background: Color( rootConfig.color.block.background )
+        .lighten( 0.75 )
+        .hexString(),
+    },
+  },
 };
 
 const regular = {
@@ -22,4 +31,8 @@ const regular = {
   padding: `${ config.regular.padding.y }px ${ config.regular.padding.x }px`,
 };
 
-export { regular };
+const updating = {
+  backgroundColor: config.updating.color.background,
+};
+
+export { regular, updating };

@@ -9,7 +9,7 @@ import { match, reduxReactRouter } from 'redux-router/lib/server';
 import config from './common/config';
 import routes from './common/routes';
 
-import nameReducer from './reducers/name';
+import * as reducers from './reducers';
 
 import Edit from './containers/Edit';
 import Home from './containers/Home';
@@ -40,7 +40,7 @@ if ( __DEVELOPMENT__ ) {
 
 function handleRender ( req, res ) {
   const reducer = combineReducers({
-    name: nameReducer,
+    ...reducers,
     router: routerStateReducer,
   });
 

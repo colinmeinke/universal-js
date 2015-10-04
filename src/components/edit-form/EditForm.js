@@ -10,6 +10,7 @@ const propTypes = {
   action: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   history: PropTypes.object,
+  isUpdating: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
@@ -38,8 +39,10 @@ class EditForm extends Component {
           value={ this.props.value }
         />
         <Button
+          isUpdating={ this.props.isUpdating }
           text="Save"
           type="Submit"
+          updatingText="Saving"
         />
       </form>
     );

@@ -1,6 +1,6 @@
 {
   "name": "universal-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A universal javascript starter kit inc. React, Redux, Redux Router, hot module reloading and Babel for ES2015+.",
   "main": "./dist/server.js",
   "scripts": {

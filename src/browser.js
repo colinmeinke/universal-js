@@ -8,12 +8,12 @@ import { reduxReactRouter, ReduxRouter, routerStateReducer } from 'redux-router'
 import config from './common/config';
 import routes from './common/routes';
 
-import nameReducer from './reducers/name';
+import * as reducers from './reducers';
 
 const history = createHistory();
 
 const reducer = combineReducers({
-  name: nameReducer,
+  ...reducers,
   router: routerStateReducer,
 });
 
