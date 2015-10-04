@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import * as coreStyle from './style';
 import * as themeStyle from '../../themes/oaxaca/components/input';
 
+let debounce;
+
 const propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -11,12 +13,19 @@ const propTypes = {
 };
 
 class Input extends Component {
+  onChange ( value ) {
+    clearTimeout( debounce );
+    debounce = setTimeout(() => {
+      this.props.onChange( value );
+    }, 500 );
+  }
+
   render () {
     return (
       <input
         defaultValue={ this.props.value }
         name={ this.props.name }
-        onChange={ e => this.props.onChange( e.target.value )}
+        onChange={ e => this.onChange( e.target.value )}
         placeholder={ this.props.placeholder }
         style={{
           ...( coreStyle.regular || {}),
