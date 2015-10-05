@@ -8,7 +8,7 @@ import { reduxReactRouter, ReduxRouter, routerStateReducer } from 'redux-router'
 import config from './common/config';
 import routes from './common/routes';
 
-import * as reducers from './reducers';
+import * as reducers from './common/reducers';
 
 const history = createHistory();
 

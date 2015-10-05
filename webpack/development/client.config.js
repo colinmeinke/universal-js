@@ -24,7 +24,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './src/browser',
+    './src/client',
   ],
   externals: {
     "react": "React",
@@ -33,7 +33,7 @@ module.exports = {
   },
   output: {
     path: path.resolve( __dirname, '..', '..', 'dist' ),
-    filename: 'browser.js',
+    filename: 'client.js',
     publicPath: '/public/',
   },
   module: {

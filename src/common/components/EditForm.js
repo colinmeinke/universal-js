@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 
-import Button from '../button/Button';
-import Input from '../input/Input';
+import Button from './Button';
+import Input from './Input';
 
-import * as coreStyle from './style';
-import * as themeStyle from '../../themes/oaxaca/components/edit-form.js';
+import * as coreStyle from '../styles/components/edit-form';
+import * as themeStyle from '../styles/themes/oaxaca/components/edit-form';
 
 const propTypes = {
   action: PropTypes.string.isRequired,

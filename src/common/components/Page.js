@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
-import * as coreStyle from './style';
-import * as themeStyle from '../../themes/oaxaca/components/page';
+import * as coreStyle from '../styles/components/page';
+import * as themeStyle from '../styles/themes/oaxaca/components/page';
 
 const defaultProps = {
   language: 'en',

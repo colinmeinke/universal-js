@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
-import * as coreStyle from './style';
-import * as themeStyle from '../../themes/oaxaca/components/input';
+import * as coreStyle from '../styles/components/input';
+import * as themeStyle from '../styles/themes/oaxaca/components/input';
 
 let debounce;
 

@@ -1,8 +1,8 @@
 import Color from 'color';
 import merge from 'deepmerge';
 
-import * as coreConfig from '../../../common/style/config';
-import * as themeConfig from '../common/config';
+import * as coreConfig from '../../../config';
+import * as themeConfig from '../config';
 
 const rootConfig = merge( coreConfig, themeConfig );
 

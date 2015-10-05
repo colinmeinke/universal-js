@@ -1,12 +1,12 @@
 {
   "name": "universal-js",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A universal javascript starter kit inc. React, Redux, Redux Router, hot module reloading and Babel for ES2015+.",
   "main": "./dist/server.js",
   "scripts": {
     "build-development": "NODE_ENV=development gulp build",
     "build-production": "NODE_ENV=production gulp build",
-    "lint": "eslint src",
+    "lint": "eslint src test",
     "start": "node ./dist/server.js",
     "test": "gulp test"
   },

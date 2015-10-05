@@ -3,7 +3,7 @@
     "/js/react.min.js",
     "/js/react-dom.min.js",
     "/js/ReactRouter.min.js",
-    "/js/browser.min.js"
+    "/js/client.min.js"
   ],
   "subDirectoryNodeModules": [
     "react-dom/server",

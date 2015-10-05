@@ -9,12 +9,12 @@ import { match, reduxReactRouter } from 'redux-router/server';
 import config from './common/config';
 import routes from './common/routes';
 
-import * as reducers from './reducers';
+import * as reducers from './common/reducers';
 
-import Edit from './containers/Edit';
-import Home from './containers/Home';
+import Edit from './common/containers/Edit';
+import Home from './common/containers/Home';
 
-import Page from './components/page/Page';
+import Page from './common/components/Page';
 
 let scripts = [ ...config.scripts ];
 
@@ -23,7 +23,7 @@ const app = express();
 app.use( express.static( 'static' ));
 
 if ( __DEVELOPMENT__ ) {
-  const webpackConfig = require( '../webpack/development/browser.config' );
+  const webpackConfig = require( '../webpack/development/client.config' );
   const compiler = require( 'webpack' )( webpackConfig );
 
   app.use( require( 'webpack-dev-middleware' )( compiler, {
@@ -68,7 +68,7 @@ function renderFullPage ( html, state ) {
       <Page
         html={ html }
         scripts={ scripts }
-        state={ JSON.stringify( state ) }
+        state={ JSON.stringify( state )}
         title="Hello world"
       />
     );

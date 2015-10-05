@@ -5,7 +5,7 @@ const babel = require( 'babel-core/register' );
 const gulp = require( 'gulp' );
 const mocha = require( 'gulp-mocha' );
 const webpack = require( 'webpack' );
-const webpackBrowserConfig = require( `./webpack/${ NODE_ENV }/browser.config.js` );
+const webpackClientConfig = require( `./webpack/${ NODE_ENV }/client.config.js` );
 const webpackServerConfig = require( `./webpack/${ NODE_ENV }/server.config.js` );
 
 const onWebpackCompile = done => {
@@ -20,18 +20,18 @@ const onWebpackCompile = done => {
   };
 };
 
-gulp.task( 'compileBrowserJs', done => {
-  webpack( webpackBrowserConfig, onWebpackCompile( done ));
+gulp.task( 'compileClientJs', done => {
+  webpack( webpackClientConfig, onWebpackCompile( done ));
 });
 
 gulp.task( 'compileServerJs', done => {
   webpack( webpackServerConfig, onWebpackCompile( done ));
 });
 
-gulp.task( 'createStaticJs', [ 'compileBrowserJs' ], () => {
+gulp.task( 'createStaticJs', [ 'compileClientJs' ], () => {
   return gulp.src([
-    './dist/browser.js.map',
-    `./dist/browser${ NODE_ENV === 'development' ? '' : '.min' }.js`,
+    './dist/client.js.map',
+    `./dist/client${ NODE_ENV === 'development' ? '' : '.min' }.js`,
     `./node_modules/react/dist/react${ NODE_ENV === 'development' ? '' : '.min' }.js`,
     `./node_modules/react/dist/react-dom${ NODE_ENV === 'development' ? '' : '.min' }.js`,
     `./node_modules/react-router/umd/ReactRouter${ NODE_ENV === 'development' ? '' : '.min' }.js`,
@@ -49,4 +49,4 @@ gulp.task( 'test', () => {
     }));
 });
 
-gulp.task( 'build', [ 'compileBrowserJs', 'compileServerJs', 'createStaticJs' ]);
+gulp.task( 'build', [ 'compileClientJs', 'compileServerJs', 'createStaticJs' ]);

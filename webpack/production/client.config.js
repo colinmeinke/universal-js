@@ -6,7 +6,7 @@ const babelConfig = {
 };
 
 module.exports = {
-  entry: './src/browser',
+  entry: './src/client',
   externals: {
     "react": "React",
     "react-dom": "ReactDOM",
@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve( __dirname, '..', '..', 'dist' ),
-    filename: 'browser.min.js',
+    filename: 'client.min.js',
   },
   module: {
     loaders: [{

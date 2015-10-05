@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import * as coreStyle from './style';
-import * as themeStyle from '../../themes/oaxaca/components/title';
+import * as coreStyle from '../styles/components/title';
+import * as themeStyle from '../styles/themes/oaxaca/components/title';
 
 const propTypes = {
   name: PropTypes.string.isRequired,

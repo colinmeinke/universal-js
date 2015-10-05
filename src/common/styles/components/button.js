@@ -1,6 +1,6 @@
 import Color from 'color';
 
-import * as rootConfig from '../../common/style/config';
+import * as rootConfig from '../config';
 
 const config = {
   regular: {

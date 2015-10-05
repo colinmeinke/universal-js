@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Title from '../components/title/Title';
+import Title from '../components/Title';
 
 const propTypes = {
   name: PropTypes.string.isRequired,

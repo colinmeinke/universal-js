@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { updateName } from '../actions/name';
 import { completeUpdate, requestUpdate } from '../actions/isUpdating';
 
-import EditForm from '../components/edit-form/EditForm';
+import EditForm from '../components/EditForm';
 
 const propTypes = {
   history: PropTypes.object.isRequired,
