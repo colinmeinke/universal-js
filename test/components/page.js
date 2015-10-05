@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import Page from '../../src/components/page/Page';
+import Page from '../../src/common/components/Page';
 
 describe( 'component', () => {
   describe( '<Page />', () => {

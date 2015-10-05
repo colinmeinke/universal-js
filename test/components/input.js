@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import Input from '../../src/components/input/Input';
+import Input from '../../src/common/components/Input';
 
 describe( 'component', () => {
   describe( '<Input />', () => {

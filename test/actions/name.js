@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-import { UPDATE_NAME, updateName } from '../../src/actions/name';
+import { UPDATE_NAME, updateName } from '../../src/common/actions/name';
 
 describe( 'action creator', () => {
   describe( 'name', () => {

@@ -1,7 +1,7 @@
 import expect from 'expect';
 
-import reducer from '../../src/reducers/isUpdating';
-import { COMPLETE_UPDATE, REQUEST_UPDATE } from '../../src/actions/isUpdating';
+import reducer from '../../src/common/reducers/isUpdating';
+import { COMPLETE_UPDATE, REQUEST_UPDATE } from '../../src/common/actions/isUpdating';
 
 describe( 'reducer', () => {
   describe( 'isUpdating()', () => {

@@ -1,7 +1,7 @@
 import expect from 'expect';
 
-import reducer from '../../src/reducers/name';
-import { UPDATE_NAME } from '../../src/actions/name';
+import reducer from '../../src/common/reducers/name';
+import { UPDATE_NAME } from '../../src/common/actions/name';
 
 describe( 'reducer', () => {
   describe( 'name()', () => {

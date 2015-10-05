@@ -3,7 +3,7 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { Link } from 'react-router';
 
-import Title from '../../src/components/title/Title';
+import Title from '../../src/common/components/Title';
 
 describe( 'component', () => {
   describe( '<Title />', () => {

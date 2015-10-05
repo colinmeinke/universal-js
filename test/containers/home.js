@@ -4,9 +4,9 @@ import TestUtils from 'react-addons-test-utils';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import Title from '../../src/components/title/Title';
+import ConnectedHome, { Home } from '../../src/common/containers/Home';
 
-import ConnectedHome, { Home } from '../../src/containers/Home';
+import Title from '../../src/common/components/Title';
 
 describe( 'container', () => {
   const props = {

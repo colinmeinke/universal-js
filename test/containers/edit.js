@@ -5,8 +5,9 @@ import TestUtils from 'react-addons-test-utils';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import ConnectedEdit, { Edit } from '../../src/containers/Edit';
-import EditForm from '../../src/components/edit-form/EditForm';
+import ConnectedEdit, { Edit } from '../../src/common/containers/Edit';
+
+import EditForm from '../../src/common/components/EditForm';
 
 describe( 'container', () => {
   const history = createHistory();

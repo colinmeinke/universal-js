@@ -2,9 +2,9 @@ import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import Button from '../../src/components/button/Button';
-import EditForm from '../../src/components/edit-form/EditForm';
-import Input from '../../src/components/input/Input';
+import Button from '../../src/common/components/Button';
+import EditForm from '../../src/common/components/EditForm';
+import Input from '../../src/common/components/Input';
 
 describe( 'component', () => {
   describe( '<EditForm />', () => {
