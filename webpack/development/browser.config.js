@@ -38,7 +38,7 @@ module.exports = {
   },
   module: {
     loaders: [{
-      loaders: [ 'babel?' + JSON.stringify( babelConfig )],
+      loaders: [ `babel?${ JSON.stringify( babelConfig )}` ],
       test: /\.js$/,
     },
     {

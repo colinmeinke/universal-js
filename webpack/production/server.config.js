@@ -13,7 +13,7 @@ fs.readdirSync( 'node_modules' )
     return [ '.bin' ].indexOf( file ) === -1;
   })
   .forEach( function ( module ) {
-    nodeModules[ module ] = 'commonjs ' + module;
+    nodeModules[ module ] = `commonjs ${ module }`;
   });
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
   module: {
     loaders: [{
       exclude: /node_modules/,
-      loaders: [ 'babel?' + JSON.stringify( babelConfig )],
+      loaders: [ `babel?${ JSON.stringify( babelConfig )}` ],
       test: /\.js$/,
     },
     {
