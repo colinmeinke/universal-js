@@ -18,5 +18,6 @@ The example demonstrates:
 - Hot reloading
 - Inline styles
 - Style themes
+- Testing Redux and React components
 
 ... full documentation to come.

@@ -8,23 +8,11 @@ import { completeUpdate, requestUpdate } from '../actions/isUpdating';
 import EditForm from '../components/edit-form/EditForm';
 
 const propTypes = {
-  history: PropTypes.object,
-  name: PropTypes.string,
-  updateName: PropTypes.func,
+  history: PropTypes.object.isRequired,
+  isUpdating: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  updateName: PropTypes.func.isRequired,
 };
-
-@connect( state => ({
-  isUpdating: state.isUpdating,
-  name: state.name,
-}), dispatch => ({
-  updateName: name => {
-    dispatch( requestUpdate());
-    setTimeout(() => {
-      dispatch( updateName( name ));
-      dispatch( completeUpdate());
-    }, 500 );
-  },
-}))
 
 class Edit extends Component {
   render () {
@@ -44,4 +32,18 @@ class Edit extends Component {
 
 Edit.propTypes = propTypes;
 
-export default Edit;
+const ConnectedEdit = connect( state => ({
+  isUpdating: state.isUpdating,
+  name: state.name,
+}), dispatch => ({
+  updateName: name => {
+    dispatch( requestUpdate());
+    setTimeout(() => {
+      dispatch( updateName( name ));
+      dispatch( completeUpdate());
+    }, 500 );
+  },
+}))( Edit );
+
+export { Edit };
+export default ConnectedEdit;

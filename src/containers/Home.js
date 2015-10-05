@@ -4,12 +4,8 @@ import { connect } from 'react-redux';
 import Title from '../components/title/Title';
 
 const propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
-
-@connect( state => ({
-  name: state.name,
-}))
 
 class Home extends Component {
   render () {
@@ -24,4 +20,9 @@ class Home extends Component {
 
 Home.propTypes = propTypes;
 
-export default Home;
+const ConnectedHome = connect( state => ({
+  name: state.name,
+}))( Home );
+
+export { Home };
+export default ConnectedHome;
