@@ -1,12 +1,12 @@
 {
-  "subDirectoryNodeModules": [
-    "react-dom/server",
-    "redux-router/lib/server"
-  ],
   "scripts": [
     "/js/react.min.js",
     "/js/react-dom.min.js",
     "/js/ReactRouter.min.js",
     "/js/browser.min.js"
+  ],
+  "subDirectoryNodeModules": [
+    "react-dom/server",
+    "redux-router/server"
   ]
 }
