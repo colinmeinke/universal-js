@@ -2,6 +2,8 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 
+const config = require( '../../src/common/config' );
+
 const babelConfig = {
   "stage": 1,
 };
@@ -12,6 +14,7 @@ fs.readdirSync( 'node_modules' )
   .filter( file => {
     return !file.includes( '.bin' );
   })
+  .concat( config.subDirectoryNodeModules )
   .forEach( module => {
     nodeModules[ module ] = `commonjs ${ module }`;
   });
