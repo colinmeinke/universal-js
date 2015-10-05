@@ -9,10 +9,10 @@ const babelConfig = {
 let nodeModules = {};
 
 fs.readdirSync( 'node_modules' )
-  .filter( function ( file ) {
-    return [ '.bin' ].indexOf( file ) === -1;
+  .filter( file => {
+    return !file.includes( '.bin' );
   })
-  .forEach( function ( module ) {
+  .forEach( module => {
     nodeModules[ module ] = `commonjs ${ module }`;
   });
 
