@@ -4,7 +4,7 @@ import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import { ReduxRouter, routerStateReducer } from 'redux-router';
-import { match, reduxReactRouter } from 'redux-router/lib/server';
+import { match, reduxReactRouter } from 'redux-router/server';
 
 import config from './common/config';
 import routes from './common/routes';
