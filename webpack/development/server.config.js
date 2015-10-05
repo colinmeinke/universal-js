@@ -1,21 +1,19 @@
-'use strict';
+const fs = require( 'fs' );
+const path = require( 'path' );
+const webpack = require( 'webpack' );
 
-var fs = require( 'fs' );
-var path = require( 'path' );
-var webpack = require( 'webpack' );
-
-var babelConfig = {
+const babelConfig = {
   "stage": 1,
 };
 
-var nodeModules = {};
+let nodeModules = {};
 
 fs.readdirSync( 'node_modules' )
-  .filter( function ( x ) {
-    return [ '.bin' ].indexOf( x ) === -1;
+  .filter( function ( file ) {
+    return [ '.bin' ].indexOf( file ) === -1;
   })
-  .forEach( function ( mod ) {
-    nodeModules[ mod ] = 'commonjs ' + mod;
+  .forEach( function ( module ) {
+    nodeModules[ module ] = 'commonjs ' + module;
   });
 
 module.exports = {

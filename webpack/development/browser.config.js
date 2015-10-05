@@ -1,9 +1,7 @@
-'use strict';
+const path = require( 'path' );
+const webpack = require( 'webpack' );
 
-var path = require( 'path' );
-var webpack = require( 'webpack' );
-
-var babelConfig = {
+const babelConfig = {
   "stage": 1,
   "plugins": [
     "react-transform"
