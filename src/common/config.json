@@ -1,10 +1,80 @@
 {
-  "scripts": [
-    "/js/react.min.js",
-    "/js/react-dom.min.js",
-    "/js/ReactRouter.min.js",
-    "/js/client.min.js"
-  ],
+  "development": {
+    "scripts": [
+      {
+        "file": {
+          "name": "react.js",
+          "source": "/node_modules/react/dist/react.js"
+        },
+        "identifier": "React",
+        "import": "react"
+      },
+      {
+        "file": {
+          "name": "react-dom.js",
+          "source": "/node_modules/react/dist/react-dom.js"
+        },
+        "identifier": "ReactDOM",
+        "import": "react-dom"
+      },
+      {
+        "file": {
+          "name": "react-router.js",
+          "source": "/node_modules/react-router/umd/ReactRouter.js"
+        },
+        "identifier": "ReactRouter",
+        "import": "react-router"
+      },
+      {
+        "file": {
+          "name": "redux.js",
+          "source": "/node_modules/redux/dist/redux.js"
+        },
+        "identifier": "Redux",
+        "import": "redux"
+      },
+      {
+        "file": {
+          "name": "react-redux.js",
+          "source": "/node_modules/react-redux/dist/react-redux.js"
+        },
+        "identifier": "ReactRedux",
+        "import": "react-redux"
+      },
+      {
+        "file": {
+          "name": "client.js",
+          "source": "/dist/client.js"
+        }
+      }
+    ]
+  },
+  "production": {
+    "scripts": [
+      {
+        "file": {
+          "name": "react.min.js",
+          "source": "/node_modules/react/dist/react.min.js"
+        },
+        "identifier": "React",
+        "import": "react"
+      },
+      {
+        "file": {
+          "name": "react-dom.js",
+          "source": "/node_modules/react/dist/react-dom.js"
+        },
+        "identifier": "ReactDOM",
+        "import": "react-dom"
+      },
+      {
+        "file": {
+          "name": "client.min.js",
+          "source": "/dist/client.min.js"
+        }
+      }
+    ]
+  },
   "subDirectoryNodeModules": [
     "react-dom/server",
     "redux-router/server"

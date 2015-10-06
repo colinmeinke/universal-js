@@ -16,7 +16,10 @@ import Home from './common/containers/Home';
 
 import Page from './common/components/Page';
 
-let scripts = [ ...config.scripts ];
+const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
+  .map( script => {
+    return `/js/${ script.file.name }`;
+  });
 
 const app = express();
 
@@ -32,10 +35,6 @@ if ( __DEVELOPMENT__ ) {
   }));
 
   app.use( require( 'webpack-hot-middleware' )( compiler ));
-
-  scripts = scripts.map( script => {
-    return script.replace( '.min', '' );
-  });
 }
 
 function handleRender ( req, res ) {

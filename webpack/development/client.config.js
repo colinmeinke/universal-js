@@ -1,6 +1,8 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 
+const config = require( '../../src/common/config' );
+
 const babelConfig = {
   "stage": 1,
   "plugins": [
@@ -20,17 +22,21 @@ const babelConfig = {
   }
 };
 
+const externals = config.development.scripts.filter( script => {
+  return script.import;
+}).map( script => {
+  return {[ script.import ]: script.identifier };
+}).reduce(( prev, curr ) => {
+  return Object.assign( prev, curr );
+});
+
 module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
     './src/client',
   ],
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM",
-    "react-router": "ReactRouter",
-  },
+  externals: externals,
   output: {
     path: path.resolve( __dirname, '..', '..', 'dist' ),
     filename: 'client.js',
@@ -54,4 +60,3 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
   ],
 };
-

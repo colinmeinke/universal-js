@@ -1,17 +1,23 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 
+const config = require( '../../src/common/config' );
+
 const babelConfig = {
   "stage": 1,
 };
 
+const externals = config.production.scripts.filter( script => {
+  return script.import;
+}).map( script => {
+  return {[ script.import ]: script.identifier };
+}).reduce(( prev, curr ) => {
+  return Object.assign( prev, curr );
+});
+
 module.exports = {
   entry: './src/client',
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM",
-    "react-router": "ReactRouter",
-  },
+  externals: externals,
   output: {
     path: path.resolve( __dirname, '..', '..', 'dist' ),
     filename: 'client.min.js',
