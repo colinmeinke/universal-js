@@ -9,17 +9,17 @@ import * as themeStyle from '../styles/themes/oaxaca/components/edit-form';
 const propTypes = {
   action: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  history: PropTypes.object,
   isUpdating: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
+  pushState: PropTypes.func.isRequired,
   value: PropTypes.string,
 };
 
 class EditForm extends Component {
   onSubmit ( e ) {
     e.preventDefault();
-    this.props.history.pushState( null, this.props.action );
+    this.props.pushState( null, this.props.action );
   }
 
   render () {

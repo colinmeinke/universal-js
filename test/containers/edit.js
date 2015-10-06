@@ -1,21 +1,19 @@
-import createHistory from 'history/lib/createMemoryHistory';
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { pushState } from 'redux-router';
 
 import ConnectedEdit, { Edit } from '../../src/common/containers/Edit';
 
 import EditForm from '../../src/common/components/EditForm';
 
 describe( 'container', () => {
-  const history = createHistory();
-
   const props = {
-    history,
     isUpdating: false,
     name: 'Colin',
+    pushState,
     updateName: () => {},
   };
 
@@ -37,10 +35,10 @@ describe( 'container', () => {
     });
 
     it( 'should pass correct props to <EditForm />', () => {
-      expect( edit.props.history ).toEqual( props.history );
       expect( edit.props.isUpdating ).toEqual( props.isUpdating );
-      expect( edit.props.value ).toEqual( props.name );
       expect( edit.props.onChange ).toEqual( props.updateName );
+      expect( edit.props.pushState ).toEqual( props.pushState );
+      expect( edit.props.value ).toEqual( props.name );
     });
   });
 
