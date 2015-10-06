@@ -35,6 +35,7 @@
     "express": "^4.13.3",
     "history": "^1.12.1",
     "react": "^0.14.0-rc1",
+    "react-document-title": "^2.0.1",
     "react-dom": "^0.14.0-rc1",
     "react-redux": "^3.0.0",
     "react-router": "^1.0.0-rc1",

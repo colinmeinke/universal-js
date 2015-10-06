@@ -1,3 +1,4 @@
+import DocumentTitle from 'react-document-title';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
@@ -18,15 +19,17 @@ const propTypes = {
 class Edit extends Component {
   render () {
     return (
-      <EditForm
-        action="/"
-        isUpdating={ this.props.isUpdating }
-        name="name"
-        onChange={ this.props.updateName }
-        placeholder="Your name..."
-        pushState={ this.props.pushState }
-        value={ this.props.name }
-      />
+      <DocumentTitle title="Edit your name">
+        <EditForm
+          action="/"
+          isUpdating={ this.props.isUpdating }
+          name="name"
+          onChange={ this.props.updateName }
+          placeholder="Your name..."
+          pushState={ this.props.pushState }
+          value={ this.props.name }
+        />
+      </DocumentTitle>
     );
   }
 }

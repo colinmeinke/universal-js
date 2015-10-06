@@ -1,3 +1,4 @@
+import DocumentTitle from 'react-document-title';
 import express from 'express';
 import React from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
@@ -68,7 +69,7 @@ function renderFullPage ( html, state ) {
         html={ html }
         scripts={ scripts }
         state={ JSON.stringify( state )}
-        title="Hello world"
+        title={ DocumentTitle.rewind() }
       />
     );
 };

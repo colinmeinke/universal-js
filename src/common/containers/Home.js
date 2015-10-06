@@ -1,3 +1,4 @@
+import DocumentTitle from 'react-document-title';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
@@ -10,10 +11,12 @@ const propTypes = {
 class Home extends Component {
   render () {
     return (
-      <section>
-        <Title name={ this.props.name } />
-        { this.props.children }
-      </section>
+      <DocumentTitle title={ `Hello ${ this.props.name }` }>
+        <section>
+          <Title name={ this.props.name } />
+          { this.props.children }
+        </section>
+      </DocumentTitle>
     );
   }
 }
