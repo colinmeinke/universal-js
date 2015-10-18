@@ -1,7 +1,6 @@
 import DocumentTitle from 'react-document-title';
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import { pushState } from 'redux-router';
 
 import { updateName } from '../actions/name';
@@ -16,27 +15,23 @@ const propTypes = {
   updateName: PropTypes.func.isRequired,
 };
 
-class Edit extends Component {
-  render () {
-    return (
-      <DocumentTitle title="Edit your name">
-        <EditForm
-          action="/"
-          isUpdating={ this.props.isUpdating }
-          name="name"
-          onChange={ this.props.updateName }
-          placeholder="Your name..."
-          pushState={ this.props.pushState }
-          value={ this.props.name }
-        />
-      </DocumentTitle>
-    );
-  }
-}
+const Edit = props => (
+  <DocumentTitle title="Edit your name">
+    <EditForm
+      action="/"
+      isUpdating={ props.isUpdating }
+      name="name"
+      onChange={ props.updateName }
+      placeholder="Your name..."
+      pushState={ props.pushState }
+      value={ props.name }
+    />
+  </DocumentTitle>
+);
 
 Edit.propTypes = propTypes;
 
-const ConnectedEdit = connect( state => ({
+const EditContainer = connect( state => ({
   isUpdating: state.isUpdating,
   name: state.name,
 }), dispatch => ({
@@ -53,4 +48,4 @@ const ConnectedEdit = connect( state => ({
 }))( Edit );
 
 export { Edit };
-export default ConnectedEdit;
+export default EditContainer;

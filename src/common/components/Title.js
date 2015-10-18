@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import * as coreStyle from '../styles/components/title';
@@ -8,51 +8,47 @@ const propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-class Title extends Component {
-  render () {
-    return (
-      <div
+const Title = props => (
+  <div
+    style={{
+      ...( coreStyle.container || {}),
+      ...( themeStyle.container || {}),
+    }}
+  >
+    <Link
+      style={{
+        ...( coreStyle.link || {}),
+        ...( themeStyle.link || {}),
+      }}
+      to={ `/edit?name=${ props.name }` }
+    >
+      <h1
         style={{
-          ...( coreStyle.container || {}),
-          ...( themeStyle.container || {}),
+          ...( coreStyle.title || {}),
+          ...( themeStyle.title || {}),
         }}
       >
-        <Link
+        <span
           style={{
-            ...( coreStyle.link || {}),
-            ...( themeStyle.link || {}),
+            ...( coreStyle.before || {}),
+            ...( themeStyle.before || {}),
           }}
-          to={ `/edit?name=${ this.props.name }` }
         >
-          <h1
-            style={{
-              ...( coreStyle.title || {}),
-              ...( themeStyle.title || {}),
-            }}
-          >
-            <span
-              style={{
-                ...( coreStyle.before || {}),
-                ...( themeStyle.before || {}),
-              }}
-            >
-            </span>
+        </span>
 
-            Hello { this.props.name }
+        Hello { props.name }
 
-            <span
-              style={{
-                ...( coreStyle.after || {}),
-                ...( themeStyle.after || {}),
-              }}
-            >
-            </span>
-          </h1>
-        </Link>
-      </div>
-    );
-  }
-}
+        <span
+          style={{
+            ...( coreStyle.after || {}),
+            ...( themeStyle.after || {}),
+          }}
+        >
+        </span>
+      </h1>
+    </Link>
+  </div>
+);
 
 Title.propTypes = propTypes;
 

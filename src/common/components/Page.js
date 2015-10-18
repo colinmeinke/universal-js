@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import * as coreStyle from '../styles/components/page';
 import * as themeStyle from '../styles/themes/oaxaca/components/page';
@@ -19,74 +19,71 @@ const propTypes = {
   title: PropTypes.string,
 };
 
-class Page extends Component {
-  render () {
-    const scripts = [];
-    const styles = [];
+const Page = props => {
+  const scripts = [];
+  const styles = [];
 
-    this.props.scripts.forEach(( script, i ) => {
-      scripts.push(
-        <script key={ i } src={ script } />
-      );
-    });
+  props.scripts.forEach(( script, i ) => {
+    scripts.push(
+      <script key={ i } src={ script } />
+    );
+  });
 
-    this.props.styles.forEach(( style, i ) => {
-      styles.push(
-        <link href={ style } key={ i } rel="stylesheet" />
-      );
-    });
+  props.styles.forEach(( style, i ) => {
+    styles.push(
+      <link href={ style } key={ i } rel="stylesheet" />
+    );
+  });
 
-    return (
-      <html
-        lang={ this.props.language }
+  return (
+    <html
+      lang={ props.language }
+      style={{
+        ...( coreStyle.html || {}),
+        ...( themeStyle.html || {}),
+      }}
+    >
+      <head>
+        <meta charSet="utf-8" />
+        <meta
+          content="ie=edge"
+          httpEquiv="x-ua-compatible"
+        />
+        <title>{ props.title }</title>
+        <meta
+          content={ props.description }
+          name="description"
+        />
+        <meta
+          content="width=device-width, initial-scale=1"
+          name="viewport"
+        />
+        { styles }
+      </head>
+      <body
         style={{
-          ...( coreStyle.html || {}),
-          ...( themeStyle.html || {}),
+          ...( coreStyle.body || {}),
+          ...( themeStyle.body || {}),
         }}
       >
-        <head>
-          <meta charSet="utf-8" />
-          <meta
-            content="ie=edge"
-            httpEquiv="x-ua-compatible"
-          />
-          <title>{ this.props.title }</title>
-          <meta
-            content={ this.props.description }
-            name="description"
-          />
-          <meta
-            content="width=device-width, initial-scale=1"
-            name="viewport"
-          />
-          { styles }
-        </head>
-        <body
+        <section
+          className="root"
+          dangerouslySetInnerHTML={{ __html: props.html }}
           style={{
-            ...( coreStyle.body || {}),
-            ...( themeStyle.body || {}),
+            ...( coreStyle.container || {}),
+            ...( themeStyle.container || {}),
           }}
-        >
-          <section
-            className="app"
-            dangerouslySetInnerHTML={{ __html: this.props.html }}
-            style={{
-              ...( coreStyle.container || {}),
-              ...( themeStyle.container || {}),
-            }}
-          />
-          <script
-            dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( this.props.state )};` }}
-          />
-          { scripts }
-        </body>
-      </html>
-    );
-  }
-}
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( props.state )};` }}
+        />
+        { scripts }
+      </body>
+    </html>
+  );
+};
 
 Page.defaultProps = defaultProps;
-
 Page.propTypes = propTypes;
 
 export default Page;

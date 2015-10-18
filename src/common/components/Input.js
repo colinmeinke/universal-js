@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import * as coreStyle from '../styles/components/input';
 import * as themeStyle from '../styles/themes/oaxaca/components/input';
@@ -12,29 +12,23 @@ const propTypes = {
   value: PropTypes.string,
 };
 
-class Input extends Component {
-  onChange ( value ) {
-    clearTimeout( debounce );
-    debounce = setTimeout(() => {
-      this.props.onChange( value );
-    }, 500 );
-  }
-
-  render () {
-    return (
-      <input
-        defaultValue={ this.props.value }
-        name={ this.props.name }
-        onChange={ e => this.onChange( e.target.value )}
-        placeholder={ this.props.placeholder }
-        style={{
-          ...( coreStyle.regular || {}),
-          ...( themeStyle.regular || {}),
-        }}
-      />
-    );
-  }
-}
+const Input = props => (
+  <input
+    defaultValue={ props.value }
+    name={ props.name }
+    onChange={ e => {
+      clearTimeout( debounce );
+      debounce = setTimeout(() => {
+        props.onChange( e.target.value );
+      }, 500 );
+    }}
+    placeholder={ props.placeholder }
+    style={{
+      ...( coreStyle.regular || {}),
+      ...( themeStyle.regular || {}),
+    }}
+  />
+);
 
 Input.propTypes = propTypes;
 

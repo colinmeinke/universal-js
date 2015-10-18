@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import Button from './Button';
 import Input from './Input';
@@ -16,38 +16,32 @@ const propTypes = {
   value: PropTypes.string,
 };
 
-class EditForm extends Component {
-  onSubmit ( e ) {
-    e.preventDefault();
-    this.props.pushState( null, this.props.action );
-  }
-
-  render () {
-    return (
-      <form
-        action={ this.props.action }
-        onSubmit={ e => this.onSubmit( e ) }
-        style={{
-          ...( coreStyle.form || {}),
-          ...( themeStyle.form || {}),
-        }}
-      >
-        <Input
-          name={ this.props.name }
-          onChange={ this.props.onChange }
-          placeholder={ this.props.placeholder }
-          value={ this.props.value }
-        />
-        <Button
-          isUpdating={ this.props.isUpdating }
-          text="Save"
-          type="Submit"
-          updatingText="Saving"
-        />
-      </form>
-    );
-  }
-}
+const EditForm = props => (
+  <form
+    action={ props.action }
+    onSubmit={ e => {
+      e.preventDefault();
+      props.pushState( null, props.action );
+    }}
+    style={{
+      ...( coreStyle.form || {}),
+      ...( themeStyle.form || {}),
+    }}
+  >
+    <Input
+      name={ props.name }
+      onChange={ props.onChange }
+      placeholder={ props.placeholder }
+      value={ props.value }
+    />
+    <Button
+      isUpdating={ props.isUpdating }
+      text="Save"
+      type="Submit"
+      updatingText="Saving"
+    />
+  </form>
+);
 
 EditForm.propTypes = propTypes;
 
