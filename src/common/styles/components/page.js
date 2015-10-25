@@ -18,8 +18,6 @@ const body = {
   margin: 0,
 };
 
-const container = {};
-
 const html = {
   backgroundColor: config.html.color.background,
   color: config.html.color.font,
@@ -28,4 +26,6 @@ const html = {
   lineHeight: config.html.font.lineHeight,
 };
 
-export { body, container, html };
+const root = {};
+
+export { body, html, root };

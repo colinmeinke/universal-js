@@ -49,6 +49,14 @@
       }
     ]
   },
+  "dir": {
+    "dist": "dist",
+    "js": "js",
+    "images": "images",
+    "src": "src",
+    "static": "static",
+    "test": "test"
+  },
   "production": {
     "scripts": [
       {
@@ -76,6 +84,7 @@
     ]
   },
   "subDirectoryNodeModules": [
+    "history/lib/createMemoryHistory",
     "react-dom/server",
     "redux-router/server"
   ]

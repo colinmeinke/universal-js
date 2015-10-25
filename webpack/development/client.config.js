@@ -38,7 +38,7 @@ module.exports = {
   ],
   externals: externals,
   output: {
-    path: path.resolve( __dirname, '..', '..', 'dist' ),
+    path: path.resolve( __dirname, '..', '..', config.dir.dist ),
     filename: 'client.js',
     publicPath: '/public/',
   },

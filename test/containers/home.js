@@ -4,7 +4,7 @@ import TestUtils from 'react-addons-test-utils';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import ConnectedHome, { Home } from '../../src/common/containers/Home';
+import HomeContainer, { Home } from '../../src/common/containers/Home';
 
 import Title from '../../src/common/components/Title';
 
@@ -40,7 +40,7 @@ describe( 'container', () => {
     });
   });
 
-  describe( '<ConnectedHome />', () => {
+  describe( '<HomeContainer />', () => {
     let home;
 
     before(() => {
@@ -50,7 +50,7 @@ describe( 'container', () => {
 
       renderer.render(
         <Provider store={ store }>
-          <ConnectedHome />
+          <HomeContainer />
         </Provider>
       );
 

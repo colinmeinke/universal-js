@@ -11,8 +11,8 @@ const defaultProps = {
 
 const propTypes = {
   description: PropTypes.string,
-  html: PropTypes.string,
   language: PropTypes.string,
+  root: PropTypes.string,
   scripts: PropTypes.array,
   state: PropTypes.string,
   styles: PropTypes.array,
@@ -68,10 +68,10 @@ const Page = props => {
       >
         <section
           className="root"
-          dangerouslySetInnerHTML={{ __html: props.html }}
+          dangerouslySetInnerHTML={{ __html: props.root }}
           style={{
-            ...( coreStyle.container || {}),
-            ...( themeStyle.container || {}),
+            ...( coreStyle.root || {}),
+            ...( themeStyle.root || {}),
           }}
         />
         <script

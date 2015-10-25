@@ -4,6 +4,7 @@ const NODE_ENV = process.env.NODE_ENV === 'production' ?
 const babel = require( 'babel-core/register' );
 const gulp = require( 'gulp' );
 const mocha = require( 'gulp-mocha' );
+const path = require( 'path' );
 const rename = require( 'gulp-rename' );
 const webpack = require( 'webpack' );
 const webpackClientConfig = require( `./webpack/${ NODE_ENV }/client.config.js` );
@@ -32,18 +33,18 @@ gulp.task( 'compileServerJs', done => {
 });
 
 gulp.task( 'createStaticJs', [ 'compileClientJs' ], done => {
-  gulp.src( './dist/client.js.map' )
-    .pipe( gulp.dest( './static/js/' ));
+  gulp.src( path.join( __dirname, config.dir.dist, 'client.js.map' ))
+    .pipe( gulp.dest( path.join( __dirname, config.dir.static, config.dir.js )));
 
   return config[ NODE_ENV ].scripts.forEach( script => {
     return gulp.src( `.${ script.file.source }` )
       .pipe( rename( script.file.name ))
-      .pipe( gulp.dest( './static/js/' ))
+      .pipe( gulp.dest( path.join( __dirname, config.dir.static, config.dir.js )))
   });
 });
 
 gulp.task( 'test', () => {
-  return gulp.src( './test/**/*.js' )
+  return gulp.src( `./${ config.dir.test }/**/*.js` )
     .pipe( mocha({
       compilers: {
         js: babel({

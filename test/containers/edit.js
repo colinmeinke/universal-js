@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { pushState } from 'redux-router';
 
-import ConnectedEdit, { Edit } from '../../src/common/containers/Edit';
+import EditContainer, { Edit } from '../../src/common/containers/Edit';
 
 import EditForm from '../../src/common/components/EditForm';
 
@@ -42,7 +42,7 @@ describe( 'container', () => {
     });
   });
 
-  describe( '<ConnectedEdit />', () => {
+  describe( '<EditContainer />', () => {
     let edit;
 
     before(() => {
@@ -52,7 +52,7 @@ describe( 'container', () => {
 
       renderer.render(
         <Provider store={ store }>
-          <ConnectedEdit />
+          <EditContainer />
         </Provider>
       );
 

@@ -1,30 +1,29 @@
 import DocumentTitle from 'react-document-title';
 import express from 'express';
+import favicon from 'serve-favicon';
+import path from 'path';
 import React from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
-import { Provider } from 'react-redux';
-import { combineReducers, createStore } from 'redux';
-import { ReduxRouter, routerStateReducer } from 'redux-router';
-import { match, reduxReactRouter } from 'redux-router/server';
+import { reduxReactRouter } from 'redux-router/server';
 
 import config from './common/config';
-import routes from './common/routes';
 
-import * as reducers from './common/reducers';
+import configureStore from './common/store/configureStore';
 
-import Edit from './common/containers/Edit';
-import Home from './common/containers/Home';
+import Root from './common/containers/Root';
 
 import Page from './common/components/Page';
 
 const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
   .map( script => {
-    return `/js/${ script.file.name }`;
+    return `/${ config.dir.js }/${ script.file.name }`;
   });
 
 const app = express();
 
-app.use( express.static( 'static' ));
+app.use( favicon( path.join( __dirname, '..', config.dir.static, config.dir.images, 'favicon.ico' )));
+
+app.use( express.static( path.join( __dirname, '..', config.dir.static )));
 
 if ( __DEVELOPMENT__ ) {
   const webpackConfig = require( '../webpack/development/client.config' );
@@ -38,35 +37,26 @@ if ( __DEVELOPMENT__ ) {
   app.use( require( 'webpack-hot-middleware' )( compiler ));
 }
 
-function handleRender ( req, res ) {
-  const reducer = combineReducers({
-    ...reducers,
-    router: routerStateReducer,
-  });
+const handleRender = ( req, res ) => {
+  const store = configureStore(
+    req.path,
+    { name: req.query.name || '' },
+    reduxReactRouter
+  );
 
-  const initialState = { 'name': req.query.name || '' };
-
-  const store = reduxReactRouter({
-    routes,
-  })( createStore )( reducer, initialState );
-
-  store.dispatch( match( req.path, () => {
-    res.send( renderFullPage(
-      renderToString(
-        <Provider store={ store }>
-          <ReduxRouter />
-        </Provider>
-      ),
-      store.getState()
-    ));
-  }));
+  res.send( renderFullPage(
+    renderToString(
+      <Root store={ store } />
+    ),
+    store.getState()
+  ));
 };
 
-function renderFullPage ( html, state ) {
+const renderFullPage = ( root, state ) => {
   return '<!DOCTYPE html>' +
     renderToStaticMarkup(
       <Page
-        html={ html }
+        root={ root }
         scripts={ scripts }
         state={ JSON.stringify( state )}
         title={ DocumentTitle.rewind() }
