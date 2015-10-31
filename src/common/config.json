@@ -12,7 +12,7 @@
       {
         "file": {
           "name": "react-dom.js",
-          "source": "/node_modules/react/dist/react-dom.js"
+          "source": "/node_modules/react-dom/dist/react-dom.js"
         },
         "identifier": "ReactDOM",
         "import": "react-dom"
@@ -70,7 +70,7 @@
       {
         "file": {
           "name": "react-dom.js",
-          "source": "/node_modules/react/dist/react-dom.js"
+          "source": "/node_modules/react-dom/dist/react-dom.js"
         },
         "identifier": "ReactDOM",
         "import": "react-dom"
