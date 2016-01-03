@@ -6,6 +6,8 @@
   "scripts": {
     "build-development": "NODE_ENV=development gulp build",
     "build-production": "NODE_ENV=production gulp build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "commit": "git-cz",
     "lint": "eslint src test",
     "start": "node ./dist/server.js",
     "test": "gulp test"
@@ -59,6 +61,9 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
+    "commitizen": "^2.4.6",
+    "conventional-changelog": "^0.5.3",
+    "cz-conventional-changelog": "^1.1.5",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.13.1",
     "expect": "^1.13.4",
@@ -74,5 +79,10 @@
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
