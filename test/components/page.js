@@ -10,11 +10,11 @@ describe( 'component', () => {
     let page;
 
     const props = {
+      app: 'app',
       description: '...',
-      html: 'app',
+      initialState: {},
       language: 'en',
       scripts: [ 'browser.min.js' ],
-      state: '{}',
       styles: [],
       title: 'Hello world',
     };
@@ -45,7 +45,7 @@ describe( 'component', () => {
       })[ 0 ];
 
       expect( content.props.dangerouslySetInnerHTML.__html )
-        .toEqual( props.html );
+        .toEqual( props.app );
     });
 
     it( 'should render correct scripts', () => {

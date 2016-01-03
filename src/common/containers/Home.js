@@ -8,20 +8,22 @@ const propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const Home = props => (
-  <DocumentTitle title={ `Hello ${ props.name }` }>
+const Home = ({ children, name }) => (
+  <DocumentTitle title={ `Hello ${ name }` }>
     <section>
-      <Title name={ props.name } />
-      { props.children }
+      <Title name={ name } />
+      { children }
     </section>
   </DocumentTitle>
 );
 
 Home.propTypes = propTypes;
 
-const HomeContainer = connect( state => ({
+const mapStateToProps = state => ({
   name: state.name,
-}))( Home );
+});
+
+const HomeContainer = connect( mapStateToProps )( Home );
 
 export { Home };
 export default HomeContainer;

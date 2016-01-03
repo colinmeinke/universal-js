@@ -14,19 +14,19 @@ const propTypes = {
   updatingText: PropTypes.string.isRequired,
 };
 
-const Button = props => (
+const Button = ({ isUpdating, text, type, updatingText }) => (
   <button
     style={{
       ...( coreStyle.regular || {}),
       ...( themeStyle.regular || {}),
-      ...( props.isUpdating ? {
+      ...( isUpdating ? {
         ...( coreStyle.updating || {}),
         ...( themeStyle.updating || {}),
       } : {}),
     }}
-    type={ props.type }
+    type={ type }
   >
-    { props.isUpdating ? props.updatingText : props.text }
+    { isUpdating ? updatingText : text }
   </button>
 );
 

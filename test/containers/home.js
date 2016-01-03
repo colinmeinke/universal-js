@@ -29,13 +29,13 @@ describe( 'container', () => {
     });
 
     it( 'should render correct markup', () => {
-      expect( home.type ).toBe( 'section' );
-      expect( home.props.children[ 0 ].type ).toBe( Title );
-      expect( home.props.children[ 1 ].type ).toBe( 'p' );
+      expect( home.props.children.type ).toBe( 'section' );
+      expect( home.props.children.props.children[ 0 ].type ).toBe( Title );
+      expect( home.props.children.props.children[ 1 ].type ).toBe( 'p' );
     });
 
     it( 'should pass correct props to <Title />', () => {
-      const title = home.props.children[ 0 ];
+      const title = home.props.children.props.children[ 0 ];
       expect( title.props.name ).toEqual( props.name );
     });
   });

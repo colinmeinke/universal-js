@@ -19,14 +19,6 @@
       },
       {
         "file": {
-          "name": "react-router.js",
-          "source": "/node_modules/react-router/umd/ReactRouter.js"
-        },
-        "identifier": "ReactRouter",
-        "import": "react-router"
-      },
-      {
-        "file": {
           "name": "redux.js",
           "source": "/node_modules/redux/dist/redux.js"
         },
@@ -40,6 +32,14 @@
         },
         "identifier": "ReactRedux",
         "import": "react-redux"
+      },
+      {
+        "file": {
+          "name": "universal-redux-router.js",
+          "source": "/node_modules/universal-redux-router/dist/universal-redux-router.js"
+        },
+        "identifier": "UniversalReduxRouter",
+        "import": "universal-redux-router"
       },
       {
         "file": {
@@ -84,8 +84,6 @@
     ]
   },
   "subDirectoryNodeModules": [
-    "history/lib/createMemoryHistory",
-    "react-dom/server",
-    "redux-router/server"
+    "react-dom/server"
   ]
 }

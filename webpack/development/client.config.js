@@ -1,25 +1,13 @@
+'use strict';
+
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 
 const config = require( '../../src/common/config' );
 
 const babelConfig = {
-  "stage": 1,
-  "plugins": [
-    "react-transform"
-  ],
-  "extra": {
-    "react-transform": {
-      "transforms": [{
-        "transform": "react-transform-hmr",
-        "imports": [ "react" ],
-        "locals": [ "module" ]
-      }, {
-        "transform": "react-transform-catch-errors",
-        "imports": [ "react", "redbox-react/dist/redbox" ]
-      }]
-    }
-  }
+  plugins: [ 'transform-object-rest-spread' ],
+  presets: [ 'es2015', 'react', 'react-hmre' ],
 };
 
 const externals = config.development.scripts.filter( script => {
@@ -44,6 +32,7 @@ module.exports = {
   },
   module: {
     loaders: [{
+      exclude: /node_modules/,
       loaders: [ `babel?${ JSON.stringify( babelConfig )}` ],
       test: /\.js$/,
     },

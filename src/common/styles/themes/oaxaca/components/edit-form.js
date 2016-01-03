@@ -1,1 +1,3 @@
-export {};
+const form = {};
+
+export { form };

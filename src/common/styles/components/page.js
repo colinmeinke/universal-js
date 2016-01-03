@@ -14,6 +14,8 @@ const config = {
   },
 };
 
+const app = {};
+
 const body = {
   margin: 0,
 };
@@ -26,6 +28,4 @@ const html = {
   lineHeight: config.html.font.lineHeight,
 };
 
-const root = {};
-
-export { body, html, root };
+export { app, body, html };

@@ -11,31 +11,36 @@ const propTypes = {
   name: PropTypes.string.isRequired,
   isUpdating: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  pushState: PropTypes.func.isRequired,
   value: PropTypes.string,
 };
 
-const EditForm = props => (
+const EditForm = ({
+  action,
+  isUpdating,
+  name,
+  onChange,
+  onSubmit,
+  placeholder,
+  value,
+}) => (
   <form
-    action={ props.action }
-    onSubmit={ e => {
-      e.preventDefault();
-      props.pushState( null, props.action );
-    }}
+    action={ action }
+    onSubmit={ onSubmit }
     style={{
       ...( coreStyle.form || {}),
       ...( themeStyle.form || {}),
     }}
   >
     <Input
-      name={ props.name }
-      onChange={ props.onChange }
-      placeholder={ props.placeholder }
-      value={ props.value }
+      name={ name }
+      onChange={ onChange }
+      placeholder={ placeholder }
+      value={ value }
     />
     <Button
-      isUpdating={ props.isUpdating }
+      isUpdating={ isUpdating }
       text="Save"
       type="Submit"
       updatingText="Saving"

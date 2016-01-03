@@ -4,14 +4,11 @@ import favicon from 'serve-favicon';
 import path from 'path';
 import React from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
-import { reduxReactRouter } from 'redux-router/server';
 
 import config from './common/config';
-
 import configureStore from './common/store/configureStore';
 
 import Root from './common/containers/Root';
-
 import Page from './common/components/Page';
 
 const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
@@ -38,27 +35,22 @@ if ( __DEVELOPMENT__ ) {
 }
 
 const handleRender = ( req, res ) => {
-  const store = configureStore(
-    req.path,
-    { name: req.query.name || '' },
-    reduxReactRouter
-  );
+  const name = req.query.name || '';
+  const store = configureStore({ name }, req.url );
 
   res.send( renderFullPage(
-    renderToString(
-      <Root store={ store } />
-    ),
+    renderToString( <Root store={ store } /> ),
     store.getState()
   ));
 };
 
-const renderFullPage = ( root, state ) => {
+const renderFullPage = ( app, initialState ) => {
   return '<!DOCTYPE html>' +
     renderToStaticMarkup(
       <Page
-        root={ root }
+        app={ app }
+        initialState={ initialState }
         scripts={ scripts }
-        state={ JSON.stringify( state )}
         title={ DocumentTitle.rewind() }
       />
     );

@@ -3,7 +3,6 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { pushState } from 'redux-router';
 
 import EditContainer, { Edit } from '../../src/common/containers/Edit';
 
@@ -13,7 +12,7 @@ describe( 'container', () => {
   const props = {
     isUpdating: false,
     name: 'Colin',
-    pushState,
+    returnToHomePage: () => {},
     updateName: () => {},
   };
 
@@ -31,14 +30,14 @@ describe( 'container', () => {
     });
 
     it( 'should render correct markup', () => {
-      expect( edit.type ).toBe( EditForm );
+      expect( edit.props.children.type ).toBe( EditForm );
     });
 
     it( 'should pass correct props to <EditForm />', () => {
-      expect( edit.props.isUpdating ).toEqual( props.isUpdating );
-      expect( edit.props.onChange ).toEqual( props.updateName );
-      expect( edit.props.pushState ).toEqual( props.pushState );
-      expect( edit.props.value ).toEqual( props.name );
+      expect( edit.props.children.props.isUpdating ).toEqual( props.isUpdating );
+      expect( edit.props.children.props.onChange ).toEqual( props.updateName );
+      expect( edit.props.children.props.pushState ).toEqual( props.pushState );
+      expect( edit.props.children.props.value ).toEqual( props.name );
     });
   });
 

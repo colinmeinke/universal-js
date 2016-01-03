@@ -10,78 +10,65 @@ const defaultProps = {
 };
 
 const propTypes = {
+  app: PropTypes.string,
   description: PropTypes.string,
+  initialState: PropTypes.object,
   language: PropTypes.string,
-  root: PropTypes.string,
   scripts: PropTypes.array,
-  state: PropTypes.string,
   styles: PropTypes.array,
   title: PropTypes.string,
 };
 
-const Page = props => {
-  const scripts = [];
-  const styles = [];
-
-  props.scripts.forEach(( script, i ) => {
-    scripts.push(
-      <script key={ i } src={ script } />
-    );
-  });
-
-  props.styles.forEach(( style, i ) => {
-    styles.push(
-      <link href={ style } key={ i } rel="stylesheet" />
-    );
-  });
-
-  return (
-    <html
-      lang={ props.language }
+const Page = ({ app, description, initialState, language, scripts, styles, title }) => (
+  <html
+    lang={ language }
+    style={{
+      ...( coreStyle.html || {}),
+      ...( themeStyle.html || {}),
+    }}
+  >
+    <head>
+      <meta charSet="utf-8" />
+      <meta
+        content="ie=edge"
+        httpEquiv="x-ua-compatible"
+      />
+      <title>{ title }</title>
+      <meta
+        content={ description }
+        name="description"
+      />
+      <meta
+        content="width=device-width, initial-scale=1"
+        name="viewport"
+      />
+      { styles.map(( style, i ) => {
+        return <link href={ style } key={ i } rel="stylesheet" />
+      })}
+    </head>
+    <body
       style={{
-        ...( coreStyle.html || {}),
-        ...( themeStyle.html || {}),
+        ...( coreStyle.body || {}),
+        ...( themeStyle.body || {}),
       }}
     >
-      <head>
-        <meta charSet="utf-8" />
-        <meta
-          content="ie=edge"
-          httpEquiv="x-ua-compatible"
-        />
-        <title>{ props.title }</title>
-        <meta
-          content={ props.description }
-          name="description"
-        />
-        <meta
-          content="width=device-width, initial-scale=1"
-          name="viewport"
-        />
-        { styles }
-      </head>
-      <body
+      <section
+        className="app"
+        dangerouslySetInnerHTML={{ __html: app }}
         style={{
-          ...( coreStyle.body || {}),
-          ...( themeStyle.body || {}),
+          ...( coreStyle.app || {}),
+          ...( themeStyle.app || {}),
         }}
-      >
-        <section
-          className="root"
-          dangerouslySetInnerHTML={{ __html: props.root }}
-          style={{
-            ...( coreStyle.root || {}),
-            ...( themeStyle.root || {}),
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( props.state )};` }}
-        />
-        { scripts }
-      </body>
-    </html>
-  );
-};
+      />
+      <script
+        dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( initialState )};` }}
+      />
+      { scripts.map(( script, i ) => {
+        return <script key={ i } src={ script } />
+      })}
+    </body>
+  </html>
+);
 
 Page.defaultProps = defaultProps;
 Page.propTypes = propTypes;

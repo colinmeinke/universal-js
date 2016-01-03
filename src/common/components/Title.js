@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'universal-redux-router';
 
 import * as coreStyle from '../styles/components/title';
 import * as themeStyle from '../styles/themes/oaxaca/components/title';
@@ -8,7 +8,7 @@ const propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const Title = props => (
+const Title = ({ name }) => (
   <div
     style={{
       ...( coreStyle.container || {}),
@@ -20,7 +20,7 @@ const Title = props => (
         ...( coreStyle.link || {}),
         ...( themeStyle.link || {}),
       }}
-      to={ `/edit?name=${ props.name }` }
+      url={ `/edit?name=${ name }` }
     >
       <h1
         style={{
@@ -36,7 +36,7 @@ const Title = props => (
         >
         </span>
 
-        Hello { props.name }
+        Hello { name }
 
         <span
           style={{

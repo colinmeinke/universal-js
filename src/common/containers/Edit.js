@@ -1,7 +1,7 @@
 import DocumentTitle from 'react-document-title';
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { pushState } from 'redux-router';
+import { updateUrl } from 'universal-redux-router';
 
 import { updateName } from '../actions/name';
 import { completeUpdate, requestUpdate } from '../actions/isUpdating';
@@ -11,32 +11,36 @@ import EditForm from '../components/EditForm';
 const propTypes = {
   isUpdating: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
-  pushState: PropTypes.func.isRequired,
+  returnToHomePage: PropTypes.func.isRequired,
   updateName: PropTypes.func.isRequired,
 };
 
-const Edit = props => (
+const Edit = ({ isUpdating, name, returnToHomePage, updateName }) => (
   <DocumentTitle title="Edit your name">
     <EditForm
       action="/"
-      isUpdating={ props.isUpdating }
+      isUpdating={ isUpdating }
       name="name"
-      onChange={ props.updateName }
+      onChange={ updateName }
+      onSubmit={ returnToHomePage }
       placeholder="Your name..."
-      pushState={ props.pushState }
-      value={ props.name }
+      value={ name }
     />
   </DocumentTitle>
 );
 
 Edit.propTypes = propTypes;
 
-const EditContainer = connect( state => ({
+const mapStateToProps = state => ({
   isUpdating: state.isUpdating,
   name: state.name,
-}), dispatch => ({
-  pushState: ( ...args ) => {
-    dispatch( pushState( ...args ));
+});
+
+const mapDispatchToProps = dispatch => ({
+  returnToHomePage: e => {
+    e.preventDefault();
+    window.history.pushState({}, '', '/' );
+    dispatch( updateUrl( '/' ));
   },
   updateName: name => {
     dispatch( requestUpdate());
@@ -45,7 +49,9 @@ const EditContainer = connect( state => ({
       dispatch( completeUpdate());
     }, 500 );
   },
-}))( Edit );
+});
+
+const EditContainer = connect( mapStateToProps, mapDispatchToProps )( Edit );
 
 export { Edit };
 export default EditContainer;

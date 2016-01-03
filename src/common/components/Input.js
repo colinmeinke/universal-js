@@ -12,17 +12,17 @@ const propTypes = {
   value: PropTypes.string,
 };
 
-const Input = props => (
+const Input = ({ name, onChange, placeholder, value }) => (
   <input
-    defaultValue={ props.value }
-    name={ props.name }
+    defaultValue={ value }
+    name={ name }
     onChange={ e => {
       clearTimeout( debounce );
       debounce = setTimeout(() => {
-        props.onChange( e.target.value );
+        onChange( e.target.value );
       }, 500 );
     }}
-    placeholder={ props.placeholder }
+    placeholder={ placeholder }
     style={{
       ...( coreStyle.regular || {}),
       ...( themeStyle.regular || {}),

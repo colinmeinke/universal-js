@@ -1,5 +1,6 @@
-A universal javascript starter kit inc. React, Redux, Redux
-Router, hot module reloading and Babel for ES2015+.
+A universal javascript starter kit inc. React, Redux,
+Universal Redux Router, hot module reloading and Babel for
+ES2015+.
 
 ```bash
 mkdir new-project; cd new-project
@@ -12,10 +13,10 @@ npm start --development
 The example demonstrates:
 
 - Flux using Redux
-- Routing using Redux/React Router
+- Routing using Universal Redux Router
 - Server rendering
 - Progressive enhancement (works without JS on the client)
-- Hot reloading
+- Hot reloading (currently not working with pure function components)
 - Inline styles
 - Style themes
 - Testing Redux and React components

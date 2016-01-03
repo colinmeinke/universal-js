@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import { Link } from 'react-router';
+import { Link } from 'universal-redux-router';
 
 import Title from '../../src/common/components/Title';
 
@@ -35,8 +35,8 @@ describe( 'component', () => {
       expect( h1.props.children[ 3 ].type ).toBe( 'span' );
     });
 
-    it( 'should render correct <Link /> to URL', () => {
-      expect( link.props.to ).toEqual( `/edit?name=${ props.name }` );
+    it( 'should render correct <Link /> url', () => {
+      expect( link.props.url ).toEqual( `/edit?name=${ props.name }` );
     });
 
     it( 'should render correct title text', () => {

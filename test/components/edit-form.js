@@ -1,7 +1,6 @@
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import { pushState } from 'redux-router';
 
 import Button from '../../src/common/components/Button';
 import EditForm from '../../src/common/components/EditForm';
@@ -16,8 +15,8 @@ describe( 'component', () => {
       name: 'name',
       isUpdating: false,
       onChange: () => {},
+      onSubmit: () => {},
       placeholder: 'Your name...',
-      pushState,
       value: 'Colin',
     };
 

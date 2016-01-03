@@ -48,7 +48,8 @@ gulp.task( 'test', () => {
     .pipe( mocha({
       compilers: {
         js: babel({
-          stage: 1,
+          plugins: [ 'transform-object-rest-spread', 'transform-react-jsx' ],
+          presets: [ 'es2015' ],
         }),
       },
     }));

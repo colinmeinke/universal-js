@@ -1,10 +1,13 @@
+'use strict';
+
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 
 const config = require( '../../src/common/config' );
 
 const babelConfig = {
-  "stage": 1,
+  plugins: [ 'transform-object-rest-spread' ],
+  presets: [ 'es2015', 'react' ],
 };
 
 const externals = config.production.scripts.filter( script => {
@@ -24,6 +27,7 @@ module.exports = {
   },
   module: {
     loaders: [{
+      exclude: /node_modules/,
       loaders: [ `babel?${ JSON.stringify( babelConfig )}` ],
       test: /\.js$/,
     },
@@ -44,4 +48,3 @@ module.exports = {
     }),
   ],
 };
-

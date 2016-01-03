@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require( 'fs' );
 const path = require( 'path' );
 const webpack = require( 'webpack' );
@@ -5,7 +7,8 @@ const webpack = require( 'webpack' );
 const config = require( '../../src/common/config' );
 
 const babelConfig = {
-  "stage": 1,
+  plugins: [ 'transform-object-rest-spread' ],
+  presets: [ 'es2015', 'react' ],
 };
 
 var nodeModules = {};
