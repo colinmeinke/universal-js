@@ -84,6 +84,6 @@
     ]
   },
   "subDirectoryNodeModules": [
-    "react-dom/server"
+    "react-dom-stream/server"
   ]
 }

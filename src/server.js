@@ -3,7 +3,7 @@ import express from 'express';
 import favicon from 'serve-favicon';
 import path from 'path';
 import React from 'react';
-import { renderToStaticMarkup, renderToString } from 'react-dom/server';
+import { renderToStaticMarkup, renderToString } from 'react-dom-stream/server';
 
 import config from './common/config';
 import configureStore from './common/store/configureStore';
@@ -34,28 +34,22 @@ if ( __DEVELOPMENT__ ) {
   app.use( require( 'webpack-hot-middleware' )( compiler ));
 }
 
-const handleRender = ( req, res ) => {
+const render = ( req, res ) => {
   const name = req.query.name || '';
   const store = configureStore({ name }, req.url );
 
-  res.send( renderFullPage(
-    renderToString( <Root store={ store } /> ),
-    store.getState()
-  ));
+  res.write( '<!DOCTYPE html>' );
+
+  renderToStaticMarkup(
+    <Page
+      app={ renderToString( <Root store={ store } /> )}
+      initialState={ store.getState() }
+      scripts={ scripts }
+      title={ DocumentTitle.rewind() }
+    />
+  ).pipe( res );
 };
 
-const renderFullPage = ( app, initialState ) => {
-  return '<!DOCTYPE html>' +
-    renderToStaticMarkup(
-      <Page
-        app={ app }
-        initialState={ initialState }
-        scripts={ scripts }
-        title={ DocumentTitle.rewind() }
-      />
-    );
-};
-
-app.use( handleRender );
+app.use( render );
 
 app.listen( 3000 );

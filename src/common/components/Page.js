@@ -10,7 +10,7 @@ const defaultProps = {
 };
 
 const propTypes = {
-  app: PropTypes.string,
+  app: PropTypes.object,
   description: PropTypes.string,
   initialState: PropTypes.object,
   language: PropTypes.string,
