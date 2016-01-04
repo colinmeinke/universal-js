@@ -65,6 +65,7 @@
     "cz-conventional-changelog": "^1.1.5",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^2.1.1",
+    "eslint-config-spaced": "^1.0.0",
     "eslint-plugin-react": "^3.13.1",
     "expect": "^1.13.4",
     "gulp": "^3.9.0",
