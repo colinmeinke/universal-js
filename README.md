@@ -22,3 +22,7 @@ The example demonstrates:
 - Testing Redux and React components
 
 ... full documentation to come.
+
+---
+
+![Test status](https://img.shields.io/travis/colinmeinke/universal-js.svg)
