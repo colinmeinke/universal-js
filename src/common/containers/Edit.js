@@ -11,18 +11,18 @@ import EditForm from '../components/EditForm';
 const propTypes = {
   isUpdating: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
-  returnToHomePage: PropTypes.func.isRequired,
-  updateName: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
-const Edit = ({ isUpdating, name, returnToHomePage, updateName }) => (
+const Edit = ({ isUpdating, name, onChange, onSubmit }) => (
   <DocumentTitle title="Edit your name">
     <EditForm
       action="/"
       isUpdating={ isUpdating }
       name="name"
-      onChange={ updateName }
-      onSubmit={ returnToHomePage }
+      onChange={ onChange }
+      onSubmit={ onSubmit }
       placeholder="Your name..."
       value={ name }
     />
@@ -37,17 +37,17 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  returnToHomePage: e => {
-    e.preventDefault();
-    window.history.pushState({}, '', '/' );
-    dispatch( updateUrl( '/' ));
-  },
-  updateName: name => {
+  onChange: name => {
     dispatch( requestUpdate());
     setTimeout(() => {
       dispatch( updateName( name ));
       dispatch( completeUpdate());
     }, 500 );
+  },
+  onSubmit: e => {
+    e.preventDefault();
+    window.history.pushState({}, '', '/' );
+    dispatch( updateUrl( '/' ));
   },
 });
 

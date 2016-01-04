@@ -29,7 +29,7 @@ const pseudo = {
   height: `${ config.pseudo.size }px`,
   position: 'absolute',
   width: `${ config.pseudo.size }px`,
-}
+};
 
 const after = {
   ...pseudo,

@@ -17,5 +17,4 @@ describe( 'action creator', () => {
       });
     });
   });
-
 });

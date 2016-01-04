@@ -8,6 +8,5 @@ export default function isUpdating ( state = false, action ) {
       return false;
     default:
       return state;
-  };
-};
-
+  }
+}

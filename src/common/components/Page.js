@@ -43,7 +43,7 @@ const Page = ({ app, description, initialState, language, scripts, styles, title
         name="viewport"
       />
       { styles.map(( style, i ) => {
-        return <link href={ style } key={ i } rel="stylesheet" />
+        return <link href={ style } key={ i } rel="stylesheet" />;
       })}
     </head>
     <body
@@ -64,7 +64,7 @@ const Page = ({ app, description, initialState, language, scripts, styles, title
         dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( initialState )};` }}
       />
       { scripts.map(( script, i ) => {
-        return <script key={ i } src={ script } />
+        return <script key={ i } src={ script } />;
       })}
     </body>
   </html>

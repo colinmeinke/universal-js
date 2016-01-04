@@ -39,7 +39,7 @@ describe( 'component', () => {
       renderer.render(
         <Button
           { ...props }
-          isUpdating={ true }
+          isUpdating
         />
       );
 

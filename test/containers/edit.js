@@ -12,8 +12,8 @@ describe( 'container', () => {
   const props = {
     isUpdating: false,
     name: 'Colin',
-    returnToHomePage: () => {},
-    updateName: () => {},
+    onChange: () => {},
+    onSubmit: () => {},
   };
 
   describe( '<Edit />', () => {
@@ -35,7 +35,7 @@ describe( 'container', () => {
 
     it( 'should pass correct props to <EditForm />', () => {
       expect( edit.props.children.props.isUpdating ).toEqual( props.isUpdating );
-      expect( edit.props.children.props.onChange ).toEqual( props.updateName );
+      expect( edit.props.children.props.onChange ).toEqual( props.onChange );
       expect( edit.props.children.props.pushState ).toEqual( props.pushState );
       expect( edit.props.children.props.value ).toEqual( props.name );
     });
