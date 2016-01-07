@@ -6,11 +6,6 @@ const webpack = require( 'webpack' );
 
 const config = require( '../../src/common/config' );
 
-const babelConfig = {
-  plugins: [ 'transform-object-rest-spread' ],
-  presets: [ 'es2015', 'react' ],
-};
-
 var nodeModules = {};
 
 fs.readdirSync( 'node_modules' )
@@ -32,7 +27,7 @@ module.exports = {
   module: {
     loaders: [{
       exclude: /node_modules/,
-      loaders: [ `babel?${ JSON.stringify( babelConfig )}` ],
+      loaders: [ 'babel' ],
       test: /\.js$/,
     },
     {

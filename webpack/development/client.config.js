@@ -5,11 +5,6 @@ const webpack = require( 'webpack' );
 
 const config = require( '../../src/common/config' );
 
-const babelConfig = {
-  plugins: [ 'transform-object-rest-spread' ],
-  presets: [ 'es2015', 'react', 'react-hmre' ],
-};
-
 const externals = config.development.scripts.filter( script => {
   return script.import;
 }).map( script => {
@@ -33,7 +28,7 @@ module.exports = {
   module: {
     loaders: [{
       exclude: /node_modules/,
-      loaders: [ `babel?${ JSON.stringify( babelConfig )}` ],
+      loaders: [ 'babel?presets[]=react-hmre' ],
       test: /\.js$/,
     },
     {
