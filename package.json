@@ -10,7 +10,7 @@
     "commit": "git-cz",
     "lint": "eslint src test",
     "start": "node ./dist/server.js",
-    "test": "gulp test"
+    "test": "mocha --compilers js:babel-core/register test/**/*.js"
   },
   "author": {
     "name": "Colin Meinke",
@@ -69,9 +69,9 @@
     "eslint-plugin-react": "^3.13.1",
     "expect": "^1.13.4",
     "gulp": "^3.9.0",
-    "gulp-mocha": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "json-loader": "^0.5.4",
+    "mocha": "^2.3.4",
     "react-addons-test-utils": "^0.14.5",
     "redux-devtools": "^3.0.1",
     "redux-devtools-dock-monitor": "^1.0.1",

@@ -1,9 +1,7 @@
 const NODE_ENV = process.env.NODE_ENV === 'production' ?
   'production': 'development';
 
-const babel = require( 'babel-core/register' );
 const gulp = require( 'gulp' );
-const mocha = require( 'gulp-mocha' );
 const path = require( 'path' );
 const rename = require( 'gulp-rename' );
 const webpack = require( 'webpack' );
@@ -41,18 +39,6 @@ gulp.task( 'createStaticJs', [ 'compileClientJs' ], done => {
       .pipe( rename( script.file.name ))
       .pipe( gulp.dest( path.join( __dirname, config.dir.static, config.dir.js )))
   });
-});
-
-gulp.task( 'test', () => {
-  return gulp.src( `./${ config.dir.test }/**/*.js` )
-    .pipe( mocha({
-      compilers: {
-        js: babel({
-          plugins: [ 'transform-object-rest-spread', 'transform-react-jsx' ],
-          presets: [ 'es2015' ],
-        }),
-      },
-    }));
 });
 
 gulp.task( 'build', [ 'compileClientJs', 'compileServerJs', 'createStaticJs' ]);

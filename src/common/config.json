@@ -54,8 +54,7 @@
     "js": "js",
     "images": "images",
     "src": "src",
-    "static": "static",
-    "test": "test"
+    "static": "static"
   },
   "production": {
     "scripts": [
