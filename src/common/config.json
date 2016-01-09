@@ -2,50 +2,32 @@
   "development": {
     "scripts": [
       {
-        "file": {
-          "name": "react.js",
-          "source": "/node_modules/react/dist/react.js"
-        },
+        "file": "./node_modules/react/dist/react.js",
         "identifier": "React",
         "import": "react"
       },
       {
-        "file": {
-          "name": "react-dom.js",
-          "source": "/node_modules/react-dom/dist/react-dom.js"
-        },
+        "file": "./node_modules/react-dom/dist/react-dom.js",
         "identifier": "ReactDOM",
         "import": "react-dom"
       },
       {
-        "file": {
-          "name": "redux.js",
-          "source": "/node_modules/redux/dist/redux.js"
-        },
+        "file": "./node_modules/redux/dist/redux.js",
         "identifier": "Redux",
         "import": "redux"
       },
       {
-        "file": {
-          "name": "react-redux.js",
-          "source": "/node_modules/react-redux/dist/react-redux.js"
-        },
+        "file": "./node_modules/react-redux/dist/react-redux.js",
         "identifier": "ReactRedux",
         "import": "react-redux"
       },
       {
-        "file": {
-          "name": "universal-redux-router.js",
-          "source": "/node_modules/universal-redux-router/dist/universal-redux-router.js"
-        },
+        "file": "./node_modules/universal-redux-router/dist/universal-redux-router.js",
         "identifier": "UniversalReduxRouter",
         "import": "universal-redux-router"
       },
       {
-        "file": {
-          "name": "client.js",
-          "source": "/dist/client.js"
-        }
+        "file": "./dist/client.js"
       }
     ]
   },
@@ -59,26 +41,17 @@
   "production": {
     "scripts": [
       {
-        "file": {
-          "name": "react.min.js",
-          "source": "/node_modules/react/dist/react.min.js"
-        },
+        "file": "./node_modules/react/dist/react.min.js",
         "identifier": "React",
         "import": "react"
       },
       {
-        "file": {
-          "name": "react-dom.min.js",
-          "source": "/node_modules/react-dom/dist/react-dom.min.js"
-        },
+        "file": "./node_modules/react-dom/dist/react-dom.min.js",
         "identifier": "ReactDOM",
         "import": "react-dom"
       },
       {
-        "file": {
-          "name": "client.min.js",
-          "source": "/dist/client.min.js"
-        }
+        "file": "./dist/client.min.js"
       }
     ]
   },

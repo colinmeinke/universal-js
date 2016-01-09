@@ -12,9 +12,7 @@ import Root from './common/containers/Root';
 import Page from './common/components/Page';
 
 const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
-  .map( script => {
-    return `/${ config.dir.js }/${ script.file.name }`;
-  });
+  .map( script => `/${ config.dir.js }/${ script.file.split( '/' ).pop() }` );
 
 const app = express();
 
@@ -23,7 +21,7 @@ app.use( favicon( path.join( __dirname, '..', config.dir.static, config.dir.imag
 app.use( express.static( path.join( __dirname, '..', config.dir.static )));
 
 if ( __DEVELOPMENT__ ) {
-  const webpackConfig = require( '../webpack/development/client.config' );
+  const webpackConfig = require( '../webpack/dev/client.babel' ).default;
   const compiler = require( 'webpack' )( webpackConfig );
 
   app.use( require( 'webpack-dev-middleware' )( compiler, {

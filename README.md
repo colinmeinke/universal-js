@@ -6,8 +6,8 @@ ES2015+.
 mkdir new-project; cd new-project
 git clone git@github.com:colinmeinke/universal-js.git .
 npm install
-npm run build-development
-npm start --development
+npm run build:dev
+npm run start:dev
 ```
 
 The example demonstrates:
