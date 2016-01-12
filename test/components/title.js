@@ -31,8 +31,6 @@ describe( 'component', () => {
       expect( title.type ).toBe( 'div' );
       expect( link.type ).toBe( Link );
       expect( h1.type ).toBe( 'h1' );
-      expect( h1.props.children[ 0 ].type ).toBe( 'span' );
-      expect( h1.props.children[ 3 ].type ).toBe( 'span' );
     });
 
     it( 'should render correct <Link /> url', () => {
@@ -40,8 +38,8 @@ describe( 'component', () => {
     });
 
     it( 'should render correct title text', () => {
-      expect( h1.props.children[ 1 ].trim()).toEqual( 'Hello' );
-      expect( h1.props.children[ 2 ]).toEqual( props.name );
+      expect( h1.props.children[ 0 ].trim()).toEqual( 'Hello' );
+      expect( h1.props.children[ 1 ]).toEqual( props.name );
     });
   });
 });

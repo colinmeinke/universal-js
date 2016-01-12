@@ -1,6 +1,6 @@
 {
   "name": "universal-js",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A universal javascript starter kit inc. React, Redux, Universal Redux Router, hot module reloading and Babel for ES2015+.",
   "main": "./dist/server.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "lint": "eslint src test",
     "start:dev": "node ./dist/server.js",
     "start:pro": "node ./dist/server.min.js",
-    "test": "mocha --compilers js:babel-core/register test/**/*.js"
+    "test": "mocha --compilers js:babel-core/register,css:test/compiler.js test/**/*.js"
   },
   "author": {
     "name": "Colin Meinke",

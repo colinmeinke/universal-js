@@ -10,7 +10,7 @@ describe( 'component', () => {
     let page;
 
     const props = {
-      app: 'app',
+      app: {},
       description: '...',
       initialState: {},
       language: 'en',
