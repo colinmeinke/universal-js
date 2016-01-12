@@ -10,17 +10,18 @@ const linkClasses = classNames( coreStyles.link, themeStyles.link );
 const titleClasses = classNames( coreStyles.title, themeStyles.title );
 
 const propTypes = {
-  name: PropTypes.string.isRequired,
+  linkUrl: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
-const Title = ({ name }) => (
+const Title = ({ linkUrl, text }) => (
   <div className={ containerClasses }>
     <Link
       className={ linkClasses }
-      url={ `/edit?name=${ name }` }
+      url={ linkUrl }
     >
       <h1 className={ titleClasses }>
-        Hello { name }
+        { text }
       </h1>
     </Link>
   </div>

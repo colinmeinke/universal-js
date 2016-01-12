@@ -10,38 +10,24 @@ const classes = classNames( coreStyles.form );
 
 const propTypes = {
   action: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isUpdating: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
+  inputName: PropTypes.string,
+  inputPlaceholder: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
 };
 
-const EditForm = ({
-  action,
-  isUpdating,
-  name,
-  onChange,
-  onSubmit,
-  placeholder,
-  value,
-}) => (
+const EditForm = ({ action, inputName, inputPlaceholder, onSubmit }) => (
   <form
     action={ action }
     className={ classes }
     onSubmit={ onSubmit }
   >
     <Input
-      name={ name }
-      onChange={ onChange }
-      placeholder={ placeholder }
-      value={ value }
+      name={ inputName }
+      placeholder={ inputPlaceholder }
     />
     <Button
-      isUpdating={ isUpdating }
       text="Save"
-      type="Submit"
+      type="submit"
       updatingText="Saving"
     />
   </form>

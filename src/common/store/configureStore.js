@@ -1,7 +1,7 @@
 import { combineReducers, createStore } from 'redux';
 import { updateUrl, urlReducer } from 'universal-redux-router';
 
-import DevTools from '../containers/DevTools';
+import DevTools from '../components/DevTools';
 
 import * as reducers from '../reducers';
 

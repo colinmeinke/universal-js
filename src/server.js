@@ -8,7 +8,7 @@ import { renderToStaticMarkup, renderToString } from 'react-dom-stream/server';
 import config from './common/config';
 import configureStore from './common/store/configureStore';
 
-import Root from './common/containers/Root';
+import Root from './common/components/Root';
 import Page from './common/components/Page';
 
 const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts

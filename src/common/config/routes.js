@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Home from './containers/Home';
-import Edit from './containers/Edit';
+import Home from '../components/Home';
+import Edit from '../components/Edit';
 
 const routes = url => {
   const path = url.split( '?' )[ 0 ];

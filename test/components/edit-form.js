@@ -1,10 +1,11 @@
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-import Button from '../../src/common/components/Button';
-import EditForm from '../../src/common/components/EditForm';
-import Input from '../../src/common/components/Input';
+import EditForm from '../../src/common/components/EditForm/index';
+import StatefulEditForm from '../../src/common/components/EditForm';
 
 describe( 'component', () => {
   describe( '<EditForm />', () => {
@@ -12,12 +13,9 @@ describe( 'component', () => {
 
     const props = {
       action: '/',
-      name: 'name',
-      isUpdating: false,
-      onChange: () => {},
+      inputName: 'name',
+      inputPlaceholder: 'Your name...',
       onSubmit: () => {},
-      placeholder: 'Your name...',
-      value: 'Colin',
     };
 
     before(() => {
@@ -32,26 +30,38 @@ describe( 'component', () => {
 
     it( 'should render correct markup', () => {
       expect( editForm.type ).toBe( 'form' );
-      expect( editForm.props.children[ 0 ].type ).toBe( Input );
-      expect( editForm.props.children[ 1 ].type ).toBe( Button );
     });
 
     it( 'should render the correct form action', () => {
       expect( editForm.props.action ).toBe( props.action );
     });
+  });
 
-    it( 'should pass correct props to <Input />', () => {
-      const input = editForm.props.children[ 0 ];
+  describe( '<StatefulEditForm />', () => {
+    let editForm;
 
-      expect( input.props.name ).toEqual( props.name );
-      expect( input.props.onChange ).toEqual( props.onChange );
-      expect( input.props.placeholder ).toEqual( props.placeholder );
-      expect( input.props.value ).toEqual( props.value );
+    const props = {
+      action: '/',
+      inputName: 'name',
+      inputPlaceholder: 'Your name...',
+    };
+
+    before(() => {
+      const store = createStore(() => props );
+
+      const renderer = TestUtils.createRenderer();
+
+      renderer.render(
+        <Provider store={ store }>
+          <StatefulEditForm { ...props } />
+        </Provider>
+      );
+
+      editForm = renderer.getRenderOutput();
     });
 
-    it( 'should pass correct props to <Button />', () => {
-      const button = editForm.props.children[ 1 ];
-      expect( button.props.isUpdating ).toEqual( props.isUpdating );
+    it( 'should connect to redux store', () => {
+      expect( editForm.type.displayName ).toEqual( 'Connect(EditForm)' );
     });
   });
 });

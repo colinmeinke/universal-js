@@ -9,16 +9,16 @@ const classes = classNames( coreStyles.regular, themeStyles.regular );
 let debounce;
 
 const propTypes = {
-  name: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string,
+  name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  value: PropTypes.string,
 };
 
-const Input = ({ name, onChange, placeholder, value }) => (
+const Input = ({ defaultValue, name, onChange, placeholder }) => (
   <input
     className={ classes }
-    defaultValue={ value }
+    defaultValue={ defaultValue }
     name={ name }
     onChange={ e => {
       clearTimeout( debounce );

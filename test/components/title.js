@@ -3,7 +3,7 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import { Link } from 'universal-redux-router';
 
-import Title from '../../src/common/components/Title';
+import Title from '../../src/common/components/Title/index';
 
 describe( 'component', () => {
   describe( '<Title />', () => {
@@ -12,7 +12,8 @@ describe( 'component', () => {
     let title;
 
     const props = {
-      name: 'Colin',
+      linkUrl: '/edit',
+      text: 'Hello Colin',
     };
 
     before(() => {
@@ -34,12 +35,11 @@ describe( 'component', () => {
     });
 
     it( 'should render correct <Link /> url', () => {
-      expect( link.props.url ).toEqual( `/edit?name=${ props.name }` );
+      expect( link.props.url ).toEqual( props.linkUrl );
     });
 
     it( 'should render correct title text', () => {
-      expect( h1.props.children[ 0 ].trim()).toEqual( 'Hello' );
-      expect( h1.props.children[ 1 ]).toEqual( props.name );
+      expect( h1.props.children.trim()).toEqual( props.text );
     });
   });
 });

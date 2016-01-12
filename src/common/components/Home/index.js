@@ -1,8 +1,7 @@
 import DocumentTitle from 'react-document-title';
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 
-import Title from '../components/Title';
+import Title from '../Title';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -11,7 +10,10 @@ const propTypes = {
 const Home = ({ children, name }) => (
   <DocumentTitle title={ `Hello ${ name }` }>
     <section>
-      <Title name={ name } />
+      <Title
+        linkUrl={ `/edit?name=${ name }` }
+        text={ `Hello ${ name }` }
+      />
       { children }
     </section>
   </DocumentTitle>
@@ -19,11 +21,4 @@ const Home = ({ children, name }) => (
 
 Home.propTypes = propTypes;
 
-const mapStateToProps = state => ({
-  name: state.name,
-});
-
-const HomeContainer = connect( mapStateToProps )( Home );
-
-export { Home };
-export default HomeContainer;
+export default Home;
