@@ -3,21 +3,30 @@ import webpack from 'webpack';
 import config from '../../src/common/config';
 
 import clientConfig from '../client';
-import defaultConfig from '../default';
 import devConfig from '../dev';
+
+const baseConfig = {
+  ...clientConfig,
+  ...devConfig,
+};
 
 const externals = config.development.scripts
   .filter( script => script.import )
   .map( script => ({[ script.import ]: script.identifier }))
   .reduce(( prev, curr ) => ({ ...prev, ...curr }));
 
-const baseConfig = {
-  ...defaultConfig,
-  ...clientConfig,
-  ...devConfig,
-};
+const loaders = baseConfig.module.loaders.map( l => {
+  if ( l.loaders && l.loaders[ 0 ] === 'babel' ) {
+    return {
+      ...l,
+      loaders: [ 'babel?presets[]=react-hmre' ],
+    };
+  }
 
-const wpConfig = {
+  return l;
+});
+
+export default {
   ...baseConfig,
   devtool: 'source-map',
   entry: [
@@ -35,8 +44,7 @@ const wpConfig = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
+  module: {
+    loaders: loaders,
+  },
 };
-
-wpConfig.module.loaders[ 0 ].loaders = [ 'babel?presets[]=react-hmre' ];
-
-export default wpConfig;

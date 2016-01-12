@@ -1,0 +1,13 @@
+@import "../../config/styles/oaxaca-theme.css";
+
+.regular {
+  --color-background: var( --color-block-background );
+  background-color: var( --color-background );
+}
+
+.updating {
+  --color-background: var( --color-block-background );
+  --color-font: color( var( --color-block-background ) blackness( +50% ));
+  background-color: var( --color-background );
+  color: var( --color-font );
+}

@@ -1,16 +1,14 @@
 import webpack from 'webpack';
 
-import defaultConfig from '../default';
 import devConfig from '../dev';
 import serverConfig from '../server';
 
 const baseConfig = {
-  ...defaultConfig,
   ...serverConfig,
   ...devConfig,
 };
 
-const wpConfig = {
+export default {
   ...baseConfig,
   output: {
     ...baseConfig.output,
@@ -27,5 +25,3 @@ const wpConfig = {
     ),
   ],
 };
-
-export default wpConfig;

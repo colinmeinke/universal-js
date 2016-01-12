@@ -1,0 +1,18 @@
+@import "../../config/styles/core.css";
+
+.body {
+  margin: 0;
+}
+
+.html {
+  --color-background: var( --color-background );
+  --color-font: var( --color-font );
+  --font-family: var( --font-family-regular );
+  --font-line-height: var( --font-line-height );
+  --font-size: var( --font-size-small );
+  background-color: var( --color-background );
+  color: var( --color-font );
+  font-family: var( --font-family );
+  font-size: var( --font-size );
+  line-height: var( --font-line-height );
+}

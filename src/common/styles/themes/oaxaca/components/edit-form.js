@@ -1,3 +1,0 @@
-const form = {};
-
-export { form };

@@ -1,0 +1,31 @@
+@import "../../config/styles/oaxaca-theme.css";
+
+.title,
+.title::before,
+.title::after {
+  --border-color: var( --color-font );
+  --border-width: var( --width-border );
+  border-color: var( --border-color );
+  border-width: var( --border-width );
+}
+
+.title {
+  --color-font: var( --color-font );
+  color: var( --color-font );
+}
+
+.title::before,
+.title::after {
+  --pseudo-size: calc( var( --width-border ) + var( --spacing-small ) / 2 );
+  bottom: calc( - var( --border-width ));
+  height: var( --pseudo-size );
+  width: var( --pseudo-size );
+}
+
+.title::before {
+  left: calc( - var( --pseudo-size ));
+}
+
+.title::after {
+  right: calc( - var( --pseudo-size ));
+}

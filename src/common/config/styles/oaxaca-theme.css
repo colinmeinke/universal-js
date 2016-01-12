@@ -1,0 +1,9 @@
+:root {
+  --color-brand-primary: hsla( 5, 85%, 55%, 1 );
+  --color-brand-secondary: hsla( 345, 85%, 50%, 1 );
+  --color-background: color( var( --color-brand-primary ) lightness( +15% ));
+  --color-block-background: var( --color-brand-primary );
+  --color-border: color( var( --color-brand-primary ) lightness( +70% ));
+  --color-font: color( var( --color-brand-primary ) blackness( +75% ) saturation( -25% ));
+  --width-border: 4px;
+}

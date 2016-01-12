@@ -1,0 +1,58 @@
+@import "../../config/styles/core.css";
+
+.container,
+.title::before,
+.title::after {
+  --pseudo-size: calc( var( --width-border ) + var( --spacing-small ) / 2 );
+}
+
+.container {
+  --margin-top: var( --spacing-large );
+  --padding-x: var( --spacing-small );
+  display: flex;
+  justify-content: center;
+  margin-top: var( --margin-top );
+  padding-left: calc( var( --pseudo-size ) + var( --padding-x ));
+  padding-right: calc( var( --pseudo-size ) + var( --padding-x ));
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title,
+.title::before,
+.title::after {
+  --border-color: var( --color-font );
+  --border-width: var( --width-border );
+  border-bottom: var( --border-width ) solid var( --border-color );
+}
+
+.title {
+  --font-size: var( --font-size-large );
+  font-size: var( --font-size );
+  margin: 0;
+  position: relative;
+}
+
+.title::before,
+.title::after {
+  bottom: calc( - var( --border-width ));
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: var( --pseudo-size );
+  position: absolute;
+  width: var( --pseudo-size );
+}
+
+.title::after {
+  border-right: var( --border-width ) solid var( --border-color );
+  right: calc( - var( --pseudo-size ));
+}
+
+.title::before {
+  border-left: var( --border-width ) solid var( --border-color );
+  left: calc( - var( --pseudo-size ));
+}

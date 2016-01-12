@@ -1,0 +1,19 @@
+@import "../../config/styles/core.css";
+
+.regular {
+  --color-background: var( --color-block-background );
+  --color-font: var( --color-block-font );
+  --padding-x: var( --spacing-medium );
+  --padding-y: var( --spacing-small );
+  background-color: var( --color-background );
+  border: none;
+  color: var( --color-font );
+  font-size: inherit;
+  line-height: inherit;
+  padding: var( --padding-y ) var( --padding-x );
+}
+
+.updating {
+  --color-background: color( var( --color-block-background ) lightness( +25% ));
+  background-color: var( --color-background );
+}

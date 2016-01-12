@@ -1,0 +1,17 @@
+:root {
+  --color-background: hsla( 0, 0%, 98%, 1 );
+  --color-block-background: hsla( 0, 0%, 35%, 1 );
+  --color-block-font: hsla( 0, 0%, 100%, 1 );
+  --color-block-border: hsla( 0, 0%, 10%, 1 );
+  --color-border: hsla( 0, 0%, 70%, 1 );
+  --color-font: hsla( 0, 0%, 20%, 1 );
+  --font-family-regular: "Droid", "San Francisco", "Helvetica", "Arial", sans-serif;
+  --font-line-height: 1.5;
+  --font-size-large: 50px;
+  --font-size-medium: 30px;
+  --font-size-small: 20px;
+  --spacing-large: 40px;
+  --spacing-medium: 20px;
+  --spacing-small: 10px;
+  --width-border: 2px;
+}

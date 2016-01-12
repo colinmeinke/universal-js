@@ -1,0 +1,23 @@
+@import "../../config/styles/oaxaca-theme.css";
+
+.html {
+  --color-background-solid: var( --color-background );
+  --color-background-gradient-bottom-first: color( var( --color-brand-primary ) saturation( -35% ));
+  --color-background-gradient-bottom-second: color( var( --color-brand-secondary ) saturation( -35% ));
+  --color-background-gradient-top-first: hsla( 0, 0%, 100%, 0 );
+  --color-background-gradient-top-second: color( var( --color-brand-primary ) alpha( +75% ));
+  --color-font: var( --color-font );
+  background:
+    linear-gradient(
+      var( --color-background-gradient-top-first ),
+      var( --color-background-gradient-top-second )
+    ),
+    linear-gradient(
+      25deg,
+      var( --color-background-gradient-bottom-first ),
+      var( --color-background-gradient-bottom-second ),
+      var( --color-background-gradient-bottom-first )
+    ) var( --color-background-solid );
+  color: var( --color-font );
+  min-height: 100%;
+}

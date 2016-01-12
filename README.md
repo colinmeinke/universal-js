@@ -17,7 +17,7 @@ The example demonstrates:
 - Server rendering
 - Progressive enhancement (works without JS on the client)
 - Hot reloading (currently not working with pure function components)
-- Inline styles
+- CSS modules
 - Style themes
 - Testing Redux and React components
 

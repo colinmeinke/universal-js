@@ -43,6 +43,7 @@ const render = ( req, res ) => {
       app={ renderToString( <Root store={ store } /> )}
       initialState={ store.getState() }
       scripts={ scripts }
+      styles={[ `/${ config.dir.css }/styles.css` ]}
       title={ DocumentTitle.rewind() }
     />
   ).pipe( res );

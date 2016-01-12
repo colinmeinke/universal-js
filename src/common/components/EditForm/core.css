@@ -1,0 +1,12 @@
+@import "../../config/styles/core.css";
+
+.form {
+  --padding-x: var( --spacing-small );
+  --margin-y: var( --spacing-large );
+  display: flex;
+  justify-content: center;
+  margin-bottom: var( --margin-y );
+  margin-top: var( --margin-y );
+  padding-left: var( --padding-x );
+  padding-right: var( --padding-x );
+}

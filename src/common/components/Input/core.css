@@ -1,0 +1,21 @@
+@import "../../config/styles/core.css";
+
+.regular {
+  --border-color: var( --color-border );
+  --border-width: var( --width-border );
+  --height: calc(
+    var( --font-size-small ) *
+    var( --font-line-height ) +
+    var( --spacing-small ) *
+    2
+  );
+  --padding-x: var( --spacing-small );
+  border: var( --border-width ) solid var( --border-color );
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  height: var( --height );
+  padding-left: var( --padding-x );
+  padding-right: var( --padding-x );
+}
