@@ -1,6 +1,6 @@
 A universal javascript starter kit inc. React, Redux,
-Universal Redux Router, hot module reloading and Babel for
-ES2015+.
+Universal Redux Router, CSS modules, hot module reloading
+and Babel for ES2015+.
 
 ```bash
 mkdir new-project; cd new-project

@@ -1,7 +1,7 @@
 {
   "name": "universal-js",
   "version": "0.7.1",
-  "description": "A universal javascript starter kit inc. React, Redux, Universal Redux Router, hot module reloading and Babel for ES2015+.",
+  "description": "A universal javascript starter kit inc. React, Redux, Universal Redux Router, CSS modules, hot module reloading and Babel for ES2015+.",
   "main": "./dist/server.js",
   "scripts": {
     "build:dev": "npm run clean && npm run build:dev:client && npm run build:dev:server && npm run createStatic:dev",
