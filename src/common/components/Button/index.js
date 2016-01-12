@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 
-import coreStyles from './core';
-import themeStyles from './oaxaca-theme';
+import coreStyles from './core.css';
+import themeStyles from './oaxaca-theme.css';
 
 const defaultProps = {
   type: 'button',

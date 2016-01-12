@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 import { Link } from 'universal-redux-router';
 
-import coreStyles from './core';
-import themeStyles from './oaxaca-theme';
+import coreStyles from './core.css';
+import themeStyles from './oaxaca-theme.css';
 
 const containerClasses = classNames( coreStyles.container, themeStyles.container );
 const linkClasses = classNames( coreStyles.link, themeStyles.link );

@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import Button from '../Button';
 import Input from '../Input';
 
-import coreStyles from './core';
+import coreStyles from './core.css';
 
 const classes = classNames( coreStyles.form );
 
