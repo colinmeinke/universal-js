@@ -22,7 +22,7 @@ const Button = ({ isUpdating, text, type, updatingText }) => (
       ...( isUpdating ? [
         coreStyles.updating,
         themeStyles.updating,
-      ] : [])
+      ] : []),
     ].join( ' ' )}
     type={ type }
   >
