@@ -1,10 +1,7 @@
-import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 
 import coreStyles from './core.css';
 import themeStyles from './oaxaca-theme.css';
-
-const classes = classNames( coreStyles.regular, themeStyles.regular );
 
 let debounce;
 
@@ -17,7 +14,10 @@ const propTypes = {
 
 const Input = ({ defaultValue, name, onChange, placeholder }) => (
   <input
-    className={ classes }
+    className={[
+      coreStyles.regular,
+      themeStyles.regular,
+    ].join( ' ' )}
     defaultValue={ defaultValue }
     name={ name }
     onChange={ e => {

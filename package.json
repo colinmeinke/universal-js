@@ -51,7 +51,6 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "classnames": "^2.2.3",
     "express": "^4.13.3",
     "react": "^0.14.6",
     "react-document-title": "^2.0.1",

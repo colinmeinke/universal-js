@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 
 import coreStyles from './core.css';
@@ -15,21 +14,21 @@ const propTypes = {
   updatingText: PropTypes.string.isRequired,
 };
 
-const Button = ({ isUpdating, text, type, updatingText }) => {
-  const classes = classNames( coreStyles.regular, themeStyles.regular, {
-    [ coreStyles.updating ]: isUpdating,
-    [ themeStyles.updating ]: isUpdating,
-  });
-
-  return (
-    <button
-      className={ classes }
-      type={ type }
-    >
-      { isUpdating ? updatingText : text }
-    </button>
-  );
-};
+const Button = ({ isUpdating, text, type, updatingText }) => (
+  <button
+    className={[
+      coreStyles.regular,
+      themeStyles.regular,
+      ...( isUpdating ? [
+        coreStyles.updating,
+        themeStyles.updating,
+      ] : [])
+    ].join( ' ' )}
+    type={ type }
+  >
+    { isUpdating ? updatingText : text }
+  </button>
+);
 
 Button.defaultProps = defaultProps;
 Button.propTypes = propTypes;

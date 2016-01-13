@@ -1,11 +1,7 @@
-import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 
 import coreStyles from './core.css';
 import themeStyles from './oaxaca-theme.css';
-
-const bodyClasses = classNames( coreStyles.body );
-const htmlClasses = classNames( coreStyles.html, themeStyles.html );
 
 const defaultProps = {
   language: 'en',
@@ -25,7 +21,10 @@ const propTypes = {
 
 const Page = ({ app, description, initialState, language, scripts, styles, title }) => (
   <html
-    className={ htmlClasses }
+    className={[
+      coreStyles.html,
+      themeStyles.html,
+    ].join( ' ' )}
     lang={ language }
   >
     <head>
@@ -46,7 +45,7 @@ const Page = ({ app, description, initialState, language, scripts, styles, title
       { styles.map(( style, i ) => <link href={ style } key={ i } rel="stylesheet" /> )}
     </head>
     <body
-      className={ bodyClasses }
+      className={ coreStyles.body }
     >
       <section
         className="app"

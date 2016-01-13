@@ -1,12 +1,9 @@
-import classNames from 'classnames';
 import React, { PropTypes } from 'react';
 
 import Button from '../Button';
 import Input from '../Input';
 
 import coreStyles from './core.css';
-
-const classes = classNames( coreStyles.form );
 
 const propTypes = {
   action: PropTypes.string.isRequired,
@@ -18,7 +15,7 @@ const propTypes = {
 const EditForm = ({ action, inputName, inputPlaceholder, onSubmit }) => (
   <form
     action={ action }
-    className={ classes }
+    className={ coreStyles.form }
     onSubmit={ onSubmit }
   >
     <Input
