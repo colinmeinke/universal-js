@@ -1,6 +1,11 @@
 import expect from 'expect';
 
-import { COMPLETE_UPDATE, REQUEST_UPDATE, completeUpdate, requestUpdate } from '../../src/common/actions/isUpdating';
+import {
+  COMPLETE_UPDATE,
+  REQUEST_UPDATE,
+  completeUpdate,
+  requestUpdate,
+} from '../../src/common/actions/isUpdating';
 
 describe( 'action creator', () => {
   describe( 'isUpdating', () => {

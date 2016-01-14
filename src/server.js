@@ -16,7 +16,9 @@ const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
 
 const app = express();
 
-app.use( favicon( path.join( __dirname, '..', config.dir.static, config.dir.images, 'favicon.ico' )));
+app.use( favicon( path.join(
+  __dirname, '..', config.dir.static, config.dir.images, 'favicon.ico'
+)));
 
 app.use( express.static( path.join( __dirname, '..', config.dir.static )));
 

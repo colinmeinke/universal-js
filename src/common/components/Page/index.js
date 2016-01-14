@@ -52,7 +52,9 @@ const Page = ({ app, description, initialState, language, scripts, styles, title
         dangerouslySetInnerHTML={{ __html: app }}
       />
       <script
-        dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( initialState )};` }}
+        dangerouslySetInnerHTML={{
+          __html: `window.__INITIAL_STATE__ = ${ JSON.stringify( initialState )};`,
+        }}
       />
       { scripts.map(( script, i ) => <script key={ i } src={ script } /> )}
     </body>
