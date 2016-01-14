@@ -1,7 +1,7 @@
 {
   "name": "universal-js",
-  "version": "0.7.1",
-  "description": "A universal javascript starter kit inc. React, Redux, Universal Redux Router, CSS modules, hot module reloading and Babel for ES2015+.",
+  "version": "1.0.0",
+  "description": "A universal Javascript starter kit inc. React, Redux, Redux Dev Tools, Universal Redux Router, CSS Modules, hot module reloading, Babel for ES2015+ and ESLint.",
   "main": "./dist/server.js",
   "scripts": {
     "build:dev": "npm run clean && npm run build:dev:client && npm run build:dev:server && npm run createStatic:dev",
@@ -37,17 +37,24 @@
     "url": "https://github.com/colinmeinke/universal-js/issues"
   },
   "keywords": [
-    "Babel",
+    "babel",
     "boilerplate",
     "css modules",
+    "es2015",
+    "eslint",
     "example",
+    "flux",
     "hot module reloading",
     "javascript",
-    "React",
-    "Redux",
+    "postcss",
+    "progressive enhancement",
+    "react",
+    "redux",
+    "redux dev tools",
     "starter kit",
     "universal",
-    "Universal Redux Router"
+    "universal redux router",
+    "webpack"
   ],
   "license": "ISC",
   "dependencies": {
