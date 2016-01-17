@@ -14,7 +14,7 @@ const configureStore = ( initialState = {}, initialUrl = null ) => {
   }
 
   if ( __DEVELOPMENT__ ) {
-    const DevTools = require( '../DevTools' ).default;
+    const DevTools = require( '../components/DevTools' ).default;
     return DevTools.instrument()( createStore )( reducer, initialState );
   }
 
