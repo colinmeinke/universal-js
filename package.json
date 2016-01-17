@@ -2,7 +2,7 @@
   "name": "universal-js",
   "version": "1.0.0",
   "description": "A universal Javascript starter kit inc. React, Redux, Redux Dev Tools, Universal Redux Router, CSS Modules, hot module reloading, Babel for ES2015+ and ESLint.",
-  "main": "./dist/server.js",
+  "main": "./dist/server.min.js",
   "scripts": {
     "build:dev": "npm run clean && npm run build:dev:client && npm run build:dev:server && npm run createStatic:dev",
     "build:dev:client": "webpack --config ./webpack/dev/client.babel.js",
@@ -20,6 +20,7 @@
     "createStaticJs:dev": "mkdir -p ./static/js && cp ./dist/client.js.map ./static/js/ && cat ./src/common/config/index.json | json development.scripts | json -ga file | xargs -I % cp % ./static/js/",
     "createStaticJs:pro": "mkdir -p ./static/js && cat ./src/common/config/index.json | json production.scripts | json -ga file | xargs -I % cp % ./static/js/",
     "lint": "eslint src test",
+    "start": "npm run start:pro",
     "start:dev": "node ./dist/server.js",
     "start:pro": "node ./dist/server.min.js",
     "test": "mocha --compilers js:babel-core/register,css:test/compiler.js test/**/*.js"
