@@ -29,6 +29,9 @@
       {
         "file": "./dist/client.js"
       }
+    ],
+    "styles": [
+      "./dist/styles.css"
     ]
   },
   "dir": {
@@ -54,6 +57,9 @@
       {
         "file": "./dist/client.min.js"
       }
+    ],
+    "styles": [
+      "./dist/styles.min.css"
     ]
   },
   "subDirectoryNodeModules": [

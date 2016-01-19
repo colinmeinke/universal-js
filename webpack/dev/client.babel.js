@@ -26,6 +26,11 @@ const loaders = baseConfig.module.loaders.map( l => {
   return l;
 });
 
+loaders.push({
+  loaders: [ 'style', 'css?modules&sourceMap&importLoaders=1!postcss' ],
+  test: /\.css$/,
+});
+
 export default {
   ...baseConfig,
   devtool: 'source-map',
@@ -34,6 +39,9 @@ export default {
     baseConfig.entry,
   ],
   externals,
+  module: {
+    loaders: loaders,
+  },
   output: {
     ...baseConfig.output,
     filename: 'client.js',
@@ -44,7 +52,4 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
-  module: {
-    loaders: loaders,
-  },
 };

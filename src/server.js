@@ -14,6 +14,9 @@ import Page from './common/components/Page';
 const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
   .map( script => `/${ config.dir.js }/${ script.file.split( '/' ).pop() }` );
 
+const styles = config[ __DEVELOPMENT__ ? 'development' : 'production' ].styles
+  .map( style => `/${ config.dir.css }/${ style.split( '/' ).pop() }` );
+
 const app = express();
 
 app.use( favicon( path.join(
@@ -45,7 +48,7 @@ const render = ( req, res ) => {
       app={ renderToString( <Root store={ store } /> )}
       initialState={ store.getState() }
       scripts={ scripts }
-      styles={[ `/${ config.dir.css }/styles.css` ]}
+      styles={ styles }
       title={ DocumentTitle.rewind() }
     />
   ).pipe( res );
