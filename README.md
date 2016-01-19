@@ -13,15 +13,13 @@ hot module reloading, Babel for ES2015+ and ESLint.
   [Universal Redux Router](https://github.com/colinmeinke/universal-redux-router)
 - Server rendering
 - Progressive enhancement
-- Hot module reloading*
+- Hot module reloading
 - [CSS Modules](https://github.com/css-modules/css-modules)
 - Style themes
 - Testing Redux and React components
 - Bundling using [Webpack](https://webpack.github.io) with
   [Babel](https://babeljs.io)
 - Enforcing coding style with [ESLint](http://eslint.org)
-
-\**Currently not working with pure function components.*
 
 [Read more about the reasoning behind these decisions](#terms-concepts-and-reasoning).
 
