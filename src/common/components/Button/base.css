@@ -1,4 +1,4 @@
-@import "../../config/styles/core.css";
+@import "../../styles/base/config.css";
 
 .regular {
   --color-background: var( --color-block-background );

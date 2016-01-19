@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import coreStyles from './core.css';
+import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
 
 const defaultProps = {
@@ -17,10 +17,10 @@ const propTypes = {
 const Button = ({ isUpdating, text, type, updatingText }) => (
   <button
     className={[
-      coreStyles.regular,
+      baseStyles.regular,
       themeStyles.regular,
       ...( isUpdating ? [
-        coreStyles.updating,
+        baseStyles.updating,
         themeStyles.updating,
       ] : []),
     ].join( ' ' )}

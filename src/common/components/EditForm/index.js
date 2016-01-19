@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import Button from '../Button';
 import Input from '../Input';
 
-import coreStyles from './core.css';
+import baseStyles from './base.css';
 
 const propTypes = {
   action: PropTypes.string.isRequired,
@@ -15,7 +15,7 @@ const propTypes = {
 const EditForm = ({ action, inputName, inputPlaceholder, onSubmit }) => (
   <form
     action={ action }
-    className={ coreStyles.form }
+    className={ baseStyles.form }
     onSubmit={ onSubmit }
   >
     <Input

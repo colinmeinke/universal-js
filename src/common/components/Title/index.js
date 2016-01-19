@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'universal-redux-router';
 
-import coreStyles from './core.css';
+import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
 
 const propTypes = {
@@ -12,20 +12,20 @@ const propTypes = {
 const Title = ({ linkUrl, text }) => (
   <div
     className={[
-      coreStyles.container,
+      baseStyles.container,
       themeStyles.container,
     ].join( ' ' )}
   >
     <Link
       className={[
-        coreStyles.link,
+        baseStyles.link,
         themeStyles.link,
       ].join( ' ' )}
       url={ linkUrl }
     >
       <h1
         className={[
-          coreStyles.title,
+          baseStyles.title,
           themeStyles.title,
         ].join( ' ' )}
       >

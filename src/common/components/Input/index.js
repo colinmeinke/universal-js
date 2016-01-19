@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import coreStyles from './core.css';
+import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
 
 const propTypes = {
@@ -23,7 +23,7 @@ const Input = ({ defaultValue, name, onChange, placeholder }) => {
   return (
     <input
       className={[
-        coreStyles.regular,
+        baseStyles.regular,
         themeStyles.regular,
       ].join( ' ' )}
       defaultValue={ defaultValue }

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import coreStyles from './core.css';
+import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
 
 const defaultProps = {
@@ -22,7 +22,7 @@ const propTypes = {
 const Page = ({ app, description, initialState, language, scripts, styles, title }) => (
   <html
     className={[
-      coreStyles.html,
+      baseStyles.html,
       themeStyles.html,
     ].join( ' ' )}
     lang={ language }
@@ -45,7 +45,7 @@ const Page = ({ app, description, initialState, language, scripts, styles, title
       { styles.map(( style, i ) => <link href={ style } key={ i } rel="stylesheet" /> )}
     </head>
     <body
-      className={ coreStyles.body }
+      className={ baseStyles.body }
     >
       <section
         className="app"

@@ -1,4 +1,4 @@
-@import "../../config/styles/oaxaca-theme.css";
+@import "../../styles/oaxaca-theme/config.css";
 
 .regular {
   --color-background: var( --color-block-background );
