@@ -1,3 +1,17 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/colinmeinke/universal-js/compare/v1.0.2...v1.1.0) (2016-01-19)
+
+
+### Bug Fixes
+
+* make root component a class to enable hot module reloading ([2f2c380](https://github.com/colinmeinke/universal-js/commit/2f2c380)), closes [#13](https://github.com/colinmeinke/universal-js/issues/13)
+
+### Features
+
+* **css:** hot reload css and add sourcemap support ([0e662b9](https://github.com/colinmeinke/universal-js/commit/0e662b9))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/colinmeinke/universal-js/compare/v1.0.1...v1.0.2) (2016-01-17)
 
