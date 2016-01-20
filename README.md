@@ -335,11 +335,6 @@ time you make a change to your Javascript or CSS.
 [Hot module reloading](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack)
 solves this.
 
-Currently hot module reloading is not working on this
-repository, whilst a
-[solution is found](https://github.com/gaearon/babel-plugin-react-transform/issues/57)
-to get it working with React pure function components.
-
 ### ESLint
 
 Maintaining a consistent coding style is important, especially
