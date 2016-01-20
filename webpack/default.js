@@ -22,11 +22,17 @@ export default {
       test: /\.json$/,
     }],
   },
-  postcss: [
-    atImport(),
-    customProps(),
-    calcFunction(),
-    colorFunction(),
-    autoprefixer({ browsers: [ 'last 2 versions' ]}),
-  ],
+  postcss: function () {
+    return [
+      atImport({
+        onImport: function ( files ) {
+          files.forEach( this.addDependency );
+        }.bind( this )
+      }),
+      customProps(),
+      calcFunction(),
+      colorFunction(),
+      autoprefixer({ browsers: [ 'last 2 versions' ]}),
+    ];
+  },
 };
