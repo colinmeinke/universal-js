@@ -118,7 +118,7 @@ for a file within the `/components` directory called
     |-- components
         |-- Button
             |-- index.js
-            |-- core.css
+            |-- base.css
         |-- Button.js
 ```
 
@@ -262,10 +262,10 @@ If we write all user interface as components, all of our CSS
 can be split by component too.
 
 I like to allow theming, giving each presentational component
-a `core.css` file and then overriding those styles with a
+a `base.css` file and then overriding those styles with a
 `${theme-name}-theme.css` file.
 
-`core.css` typically contains base layout rules and a very
+`base.css` typically contains base layout rules and a very
 simple grayscale color palette.
 
 ### ES2015+
