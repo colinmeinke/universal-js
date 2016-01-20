@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/colinmeinke/universal-js/compare/v1.1.0...v1.1.1) (2016-01-20)
+
+
+### Bug Fixes
+
+* **css:** hot reload imported styles ([e577cdb](https://github.com/colinmeinke/universal-js/commit/e577cdb))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/colinmeinke/universal-js/compare/v1.0.2...v1.1.0) (2016-01-19)
 
