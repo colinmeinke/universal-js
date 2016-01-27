@@ -40,9 +40,9 @@ describe( 'component', () => {
     });
 
     it( 'should render correct content', () => {
-      const content = body.props.children.filter( child => {
-        return child.type === 'section';
-      })[ 0 ];
+      const content = body.props.children.filter( child => (
+        ( child.type === 'section' )
+      ))[ 0 ];
 
       expect( content.props.dangerouslySetInnerHTML.__html )
         .toEqual( props.app );

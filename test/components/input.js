@@ -14,7 +14,7 @@ describe( 'component', () => {
     const props = {
       defaultValue: 'Colin',
       name: 'name',
-      onChange: () => {},
+      onChange: () => ( null ),
       placeholder: 'Your name...',
     };
 

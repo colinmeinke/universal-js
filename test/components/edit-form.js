@@ -15,7 +15,7 @@ describe( 'component', () => {
       action: '/',
       inputName: 'name',
       inputPlaceholder: 'Your name...',
-      onSubmit: () => {},
+      onSubmit: () => ( null ),
     };
 
     before(() => {
