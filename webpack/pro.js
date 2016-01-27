@@ -21,6 +21,7 @@ export default {
     new ExtractTextWebpackPlugin( 'styles.min.css' ),
     new webpack.DefinePlugin({
       __DEVELOPMENT__: false,
+      'process.env.NODE_ENV': JSON.stringify( 'production' ),
     }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
