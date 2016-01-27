@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/colinmeinke/universal-js/compare/v1.1.1...v1.1.2) (2016-01-27)
+
+
+### Bug Fixes
+
+* **build:** bundle webpack with correct node env in production ([353593b](https://github.com/colinmeinke/universal-js/commit/353593b))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/colinmeinke/universal-js/compare/v1.1.0...v1.1.1) (2016-01-20)
 
