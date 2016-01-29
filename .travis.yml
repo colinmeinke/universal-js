@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - '5.5'
+notifications:
+  email:
+    on_failure: always
+    on_success: change
 script:
   - npm run lint
   - npm test
