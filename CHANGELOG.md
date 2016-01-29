@@ -1,3 +1,13 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/colinmeinke/universal-js/compare/v1.1.2...v1.1.3) (2016-01-29)
+
+
+### Bug Fixes
+
+* **input:** read input value onchange before timeout ([c1c0dba](https://github.com/colinmeinke/universal-js/commit/c1c0dba))
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/colinmeinke/universal-js/compare/v1.1.1...v1.1.2) (2016-01-27)
 
