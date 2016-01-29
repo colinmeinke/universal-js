@@ -14,9 +14,10 @@ const Input = ({ defaultValue, name, onChange, placeholder }) => {
   let debounce;
 
   const onChangeWithDebounce = e => {
+    const { value } = e.target;
     clearTimeout( debounce );
     debounce = setTimeout(() => {
-      onChange( e.target.value );
+      onChange( value );
     }, 500 );
   };
 
