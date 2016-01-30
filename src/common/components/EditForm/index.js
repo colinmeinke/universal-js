@@ -23,7 +23,7 @@ const EditForm = ({ action, inputName, inputPlaceholder, onSubmit }) => (
       placeholder={ inputPlaceholder }
     />
     <Button
-      text="Save"
+      text="Done"
       type="submit"
       updatingText="Saving"
     />
