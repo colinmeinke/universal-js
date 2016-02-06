@@ -12,8 +12,8 @@ describe( 'component', () => {
     let title;
 
     const props = {
-      linkUrl: '/edit',
       text: 'Hello Colin',
+      to: [ 'edit' ],
     };
 
     before(() => {
@@ -35,7 +35,7 @@ describe( 'component', () => {
     });
 
     it( 'should render correct <Link /> url', () => {
-      expect( link.props.url ).toEqual( props.linkUrl );
+      expect( link.props.to ).toEqual( props.to );
     });
 
     it( 'should render correct title text', () => {
