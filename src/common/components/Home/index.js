@@ -11,8 +11,8 @@ const Home = ({ children, name }) => (
   <DocumentTitle title={ `Hello ${ name }` }>
     <section>
       <Title
-        linkUrl={ `/edit?name=${ name }` }
         text={ `Hello ${ name }` }
+        to={[ 'edit', { name }]}
       />
       { children }
     </section>

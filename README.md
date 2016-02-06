@@ -214,9 +214,9 @@ achievable.
 ### Universal Redux Router
 
 [Universal Redux Router](https://github.com/colinmeinke/universal-redux-router)
-is a tiny library I built to work with [Redux](#redux).
-
-It essentially just stores `url` as part of the Redux state.
+is a router I built to turn URL params into first-class
+[Redux](#redux) state. For full documentation head over to
+that repository.
 
 ### CSS Modules
 

@@ -17,11 +17,11 @@
     "react": "^0.14.7",
     "react-document-title": "^2.0.1",
     "react-dom": "^0.14.7",
-    "react-dom-stream": "^0.4.1",
-    "react-redux": "^4.3.0",
-    "redux": "^3.2.1",
+    "react-dom-stream": "^0.5.0",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.0",
     "serve-favicon": "^2.3.0",
-    "universal-redux-router": "^0.4.0"
+    "universal-redux-router": "^1.1.1"
   },
   "description": "A universal Javascript starter kit inc. React, Redux, Redux Dev Tools, Universal Redux Router, CSS Modules, hot module reloading, Babel for ES2015+ and ESLint.",
   "devDependencies": {

@@ -5,11 +5,14 @@ import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
 
 const propTypes = {
-  linkUrl: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  to: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]).isRequired,
 };
 
-const Title = ({ linkUrl, text }) => (
+const Title = ({ text, to }) => (
   <div
     className={[
       baseStyles.container,
@@ -21,7 +24,7 @@ const Title = ({ linkUrl, text }) => (
         baseStyles.link,
         themeStyles.link,
       ].join( ' ' )}
-      url={ linkUrl }
+      to={ to }
     >
       <h1
         className={[
