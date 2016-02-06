@@ -7,6 +7,7 @@ hot module reloading, Babel for ES2015+ and ESLint.
 ---
 
 ![Test status](https://img.shields.io/travis/colinmeinke/universal-js.svg)
+![Dependencies status](https://img.shields.io/david/colinmeinke/universal-js.svg)
 
 ## Demonstrates
 
