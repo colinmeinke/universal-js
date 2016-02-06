@@ -4,6 +4,10 @@ A universal Javascript starter kit inc. React, Redux,
 Redux Dev Tools, Universal Redux Router, CSS Modules,
 hot module reloading, Babel for ES2015+ and ESLint.
 
+---
+
+![Test status](https://img.shields.io/travis/colinmeinke/universal-js.svg)
+
 ## Demonstrates
 
 - [Flux](https://facebook.github.io/flux) using
@@ -376,6 +380,6 @@ I'm also on twitter [@colinmeinke](https://twitter.com/colinmeinke).
 
 Thanks :star2:
 
----
+## License
 
-![Test status](https://img.shields.io/travis/colinmeinke/universal-js.svg)
+[ISC](./LICENSE.md).
