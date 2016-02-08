@@ -1,3 +1,17 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/colinmeinke/universal-js/compare/v2.0.0...v2.1.0) (2016-02-08)
+
+
+### Bug Fixes
+
+* **environment:** always bundle and run correct environment ([0fb3872](https://github.com/colinmeinke/universal-js/commit/0fb3872))
+
+### Features
+
+* **hot:** hot reload redux reducers ([5ea0b0b](https://github.com/colinmeinke/universal-js/commit/5ea0b0b))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/colinmeinke/universal-js/compare/v1.1.3...v2.0.0) (2016-02-06)
 
