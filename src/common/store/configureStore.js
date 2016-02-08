@@ -15,7 +15,16 @@ const configureStore = ({ isServer = false, url = '/' } = {}) => {
     middleware, require( '../components/DevTools' ).default.instrument()
   ) : middleware;
 
-  return createStore( reducer, state, enhancer );
+  const store = createStore( reducer, state, enhancer );
+
+  if ( __DEVELOPMENT__ && module.hot ) {
+    module.hot.accept( '../reducers', () => {
+      const nextEnhancer = routerReducer( require( '../reducers/index' ));
+      store.replaceReducer( nextEnhancer );
+    });
+  }
+
+  return store;
 };
 
 export default configureStore;
