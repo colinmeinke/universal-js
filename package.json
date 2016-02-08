@@ -108,8 +108,8 @@
     "createStaticJs:pro": "mkdir -p ./static/js && cat ./src/common/config/index.json | json production.scripts | json -ga file | xargs -I % cp % ./static/js/",
     "lint": "eslint src test",
     "start": "npm run start:pro",
-    "start:dev": "node ./dist/server.js",
-    "start:pro": "node ./dist/server.min.js",
+    "start:dev": "NODE_ENV=development node ./dist/server.js",
+    "start:pro": "NODE_ENV=production node ./dist/server.min.js",
     "test": "mocha --compilers js:babel-core/register,css:test/compiler.js test/**/*.js"
   },
   "version": "2.0.0"

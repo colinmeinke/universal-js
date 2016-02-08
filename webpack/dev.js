@@ -7,6 +7,7 @@ export default {
   plugins: [
     new webpack.DefinePlugin({
       __DEVELOPMENT__: true,
+      'process.env.NODE_ENV': JSON.stringify( 'development' ),
     }),
   ],
 };
