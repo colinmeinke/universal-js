@@ -1,3 +1,9 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/colinmeinke/universal-js/compare/v2.1.0...v3.0.0) (2016-02-13)
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/colinmeinke/universal-js/compare/v2.0.0...v2.1.0) (2016-02-08)
 
