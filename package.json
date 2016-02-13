@@ -19,19 +19,19 @@
     "react-dom": "^0.14.7",
     "react-dom-stream": "^0.5.0",
     "react-redux": "^4.4.0",
-    "redux": "^3.3.0",
+    "redux": "^3.3.1",
     "serve-favicon": "^2.3.0",
-    "universal-redux-router": "^1.1.1"
+    "universal-redux-router": "^2.0.0"
   },
   "description": "A universal Javascript starter kit inc. React, Redux, Redux Dev Tools, Universal Redux Router, CSS Modules, hot module reloading, Babel for ES2015+ and ESLint.",
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
-    "babel-core": "^6.4.5",
-    "babel-eslint": "^5.0.0-beta9",
+    "autoprefixer": "^6.3.2",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0-beta10",
     "babel-loader": "^6.2.2",
-    "babel-plugin-transform-object-rest-spread": "^6.3.13",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
+    "babel-plugin-transform-object-rest-spread": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.0",
     "commitizen": "^2.4.6",
     "conventional-changelog": "^0.5.3",
@@ -52,13 +52,13 @@
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.0",
     "react-addons-test-utils": "^0.14.7",
-    "redux-devtools": "^3.1.0",
+    "redux-devtools": "^3.1.1",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.4",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.6.4"
+    "webpack-hot-middleware": "^2.7.1"
   },
   "engines": {
     "node": "5.5"

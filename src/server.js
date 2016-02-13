@@ -38,18 +38,18 @@ if ( __DEVELOPMENT__ ) {
 }
 
 const render = ({ url }, res ) => {
-  const store = configureStore({ isServer: true, url });
+  configureStore({ isServer: true, url }).then( store => {
+    res.write( '<!DOCTYPE html>' );
 
-  res.write( '<!DOCTYPE html>' );
-
-  renderToStaticMarkup(
-    <Page
-      app={ renderToString( <Root store={ store } /> )}
-      scripts={ scripts }
-      styles={ styles }
-      title={ DocumentTitle.rewind() }
-    />
-  ).pipe( res );
+    renderToStaticMarkup(
+      <Page
+        app={ renderToString( <Root store={ store } /> )}
+        scripts={ scripts }
+        styles={ styles }
+        title={ DocumentTitle.rewind() }
+      />
+    ).pipe( res );
+  }).catch( console.error );
 };
 
 app.use( render );

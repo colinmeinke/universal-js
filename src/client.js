@@ -8,9 +8,9 @@ import Root from './common/components/Root';
 const { hash, pathname, search } = window.location;
 const url = pathname + search + hash;
 
-const store = configureStore({ url });
-
-render(
-  <Root store={ store } />,
-  document.querySelector( '.app' )
-);
+configureStore({ url }).then( store => {
+  render(
+    <Root store={ store } />,
+    document.querySelector( '.app' )
+  );
+}).catch( console.error );
