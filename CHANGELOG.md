@@ -2,6 +2,16 @@
 # [3.0.0](https://github.com/colinmeinke/universal-js/compare/v2.1.0...v3.0.0) (2016-02-13)
 
 
+### Chores
+
+* **npm:** update dependencies ([0ffa5c6](https://github.com/colinmeinke/universal-js/commit/0ffa5c6))
+
+
+### BREAKING CHANGES
+
+* npm: universal redux router api has changed
+https://github.com/colinmeinke/universal-redux-router/releases/tag/v2.0.0
+
 
 
 <a name="2.1.0"></a>
@@ -21,6 +31,16 @@
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/colinmeinke/universal-js/compare/v1.1.3...v2.0.0) (2016-02-06)
 
+
+### Chores
+
+* **npm:** update dependencies ([a65a8d6](https://github.com/colinmeinke/universal-js/commit/a65a8d6))
+
+
+### BREAKING CHANGES
+
+* npm: universal reudxux router api has changed
+https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 
 
@@ -91,4 +111,87 @@
 
 
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/colinmeinke/universal-js/compare/v1.0.0...v1.0.0) (2016-01-14)
+# [1.0.0](https://github.com/colinmeinke/universal-js/compare/v0.7.1...v1.0.0) (2016-01-14)
+
+
+
+
+<a name="0.7.1"></a>
+## [0.7.1](https://github.com/colinmeinke/universal-js/compare/v0.7.0...v0.7.1) (2016-01-12)
+
+
+### Bug Fixes
+
+* add .css extension to import declarations ([1711ce1](https://github.com/colinmeinke/universal-js/commit/1711ce1))
+* **tests:** add test handling of css imports ([74e08b7](https://github.com/colinmeinke/universal-js/commit/74e08b7)), closes [#14](https://github.com/colinmeinke/universal-js/issues/14)
+
+
+
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/colinmeinke/universal-js/compare/v0.6.0...v0.7.0) (2016-01-12)
+
+
+### Bug Fixes
+
+* **npm:** add eslint-babel package that eslint-config-spaced now relies upon ([57c7454](https://github.com/colinmeinke/universal-js/commit/57c7454))
+
+### Features
+
+* **styles:** move from inline styles to css modules ([3587aa1](https://github.com/colinmeinke/universal-js/commit/3587aa1)), closes [#1](https://github.com/colinmeinke/universal-js/issues/1)
+
+
+
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/colinmeinke/universal-js/compare/v0.5.1...v0.6.0) (2016-01-03)
+
+
+
+
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/colinmeinke/universal-js/compare/v0.4.0...v0.5.1) (2015-10-31)
+
+
+
+
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/colinmeinke/universal-js/compare/v0.3.1...v0.4.0) (2015-10-06)
+
+
+
+
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/colinmeinke/universal-js/compare/v0.3.0...v0.3.1) (2015-10-05)
+
+
+
+
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/colinmeinke/universal-js/compare/v0.2.1...v0.3.0) (2015-10-05)
+
+
+
+
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/colinmeinke/universal-js/compare/v0.2.0...v0.2.1) (2015-10-05)
+
+
+
+
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/colinmeinke/universal-js/compare/v0.1.1...v0.2.0) (2015-10-05)
+
+
+
+
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/colinmeinke/universal-js/compare/v0.1.0...v0.1.1) (2015-10-04)
+
+
+
+
+<a name="0.1.0"></a>
+# 0.1.0 (2015-10-03)
+
+
+
+
