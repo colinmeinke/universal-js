@@ -1,3 +1,13 @@
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/colinmeinke/universal-js/compare/v3.0.0...v3.0.1) (2016-02-13)
+
+
+### Bug Fixes
+
+* **store:** dont redeclare state variable ([b253d2a](https://github.com/colinmeinke/universal-js/commit/b253d2a))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/colinmeinke/universal-js/compare/v2.1.0...v3.0.0) (2016-02-13)
 

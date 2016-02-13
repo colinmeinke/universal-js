@@ -97,7 +97,8 @@
     "build:pro": "npm run clean && npm run build:pro:client && npm run build:pro:server && npm run createStatic:pro",
     "build:pro:client": "webpack --config ./webpack/pro/client.babel.js",
     "build:pro:server": "webpack --config ./webpack/pro/server.babel.js",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "help": "conventional-changelog --help",
     "clean": "rimraf ./dist ./static/css ./static/js",
     "commit": "git-cz",
     "createStatic:dev": "npm run createStaticJs:dev && npm run createStaticCss:dev",
@@ -112,5 +113,5 @@
     "start:pro": "NODE_ENV=production node ./dist/server.min.js",
     "test": "mocha --compilers js:babel-core/register,css:test/compiler.js test/**/*.js"
   },
-  "version": "3.0.0"
+  "version": "3.0.1"
 }
