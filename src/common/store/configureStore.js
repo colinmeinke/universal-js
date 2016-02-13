@@ -14,7 +14,7 @@ const configureStore = ({ isServer = false, url = '/' } = {}) => {
   ) : middleware;
 
   return new Promise(( resolve, reject ) => {
-    const state = getState( url, routes, reducer ).then( state => {
+    getState( url, routes, reducer ).then( state => {
       const store = createStore( reducer, state, enhancer );
 
       if ( __DEVELOPMENT__ && module.hot ) {
