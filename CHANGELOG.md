@@ -1,3 +1,13 @@
+<a name="3.0.4"></a>
+## [3.0.4](https://github.com/colinmeinke/universal-js/compare/v3.0.3...v3.0.4) (2016-02-14)
+
+
+### Bug Fixes
+
+* **hot:** finally accept class components are required for hot reloading ([0682ef9](https://github.com/colinmeinke/universal-js/commit/0682ef9))
+
+
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://github.com/colinmeinke/universal-js/compare/v3.0.2...v3.0.3) (2016-02-14)
 

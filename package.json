@@ -113,5 +113,5 @@
     "start:pro": "NODE_ENV=production node ./dist/server.min.js",
     "test": "mocha --compilers js:babel-core/register,css:test/compiler.js test/**/*.js"
   },
-  "version": "3.0.3"
+  "version": "3.0.4"
 }
