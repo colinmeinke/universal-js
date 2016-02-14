@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
@@ -18,42 +18,50 @@ const propTypes = {
   title: PropTypes.string,
 };
 
-const Page = ({ app, description, language, scripts, styles, title }) => (
-  <html
-    className={[
-      baseStyles.html,
-      themeStyles.html,
-    ].join( ' ' )}
-    lang={ language }
-  >
-    <head>
-      <meta charSet="utf-8" />
-      <meta
-        content="ie=edge"
-        httpEquiv="x-ua-compatible"
-      />
-      <title>{ title }</title>
-      <meta
-        content={ description }
-        name="description"
-      />
-      <meta
-        content="width=device-width, initial-scale=1"
-        name="viewport"
-      />
-      { styles.map(( style, i ) => <link href={ style } key={ i } rel="stylesheet" /> )}
-    </head>
-    <body
-      className={ baseStyles.body }
-    >
-      <section
-        className="app"
-        dangerouslySetInnerHTML={{ __html: app }}
-      />
-      { scripts.map(( script, i ) => <script key={ i } src={ script } /> )}
-    </body>
-  </html>
-);
+class Page extends Component {
+  render () {
+    return (
+      <html
+        className={[
+          baseStyles.html,
+          themeStyles.html,
+        ].join( ' ' )}
+        lang={ this.props.language }
+      >
+        <head>
+          <meta charSet="utf-8" />
+          <meta
+            content="ie=edge"
+            httpEquiv="x-ua-compatible"
+          />
+          <title>{ this.props.title }</title>
+          <meta
+            content={ this.props.description }
+            name="description"
+          />
+          <meta
+            content="width=device-width, initial-scale=1"
+            name="viewport"
+          />
+          { this.props.styles.map(( style, i ) => (
+            <link href={ style } key={ i } rel="stylesheet" />
+          ))}
+        </head>
+        <body
+          className={ baseStyles.body }
+        >
+          <section
+            className="app"
+            dangerouslySetInnerHTML={{ __html: this.props.app }}
+          />
+          { this.props.scripts.map(( script, i ) => (
+            <script key={ i } src={ script } />
+          ))}
+        </body>
+      </html>
+    );
+  }
+}
 
 Page.defaultProps = defaultProps;
 Page.propTypes = propTypes;

@@ -1,7 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
+
+let debounce;
 
 const propTypes = {
   defaultValue: PropTypes.string,
@@ -10,30 +12,30 @@ const propTypes = {
   placeholder: PropTypes.string,
 };
 
-const Input = ({ defaultValue, name, onChange, placeholder }) => {
-  let debounce;
-
-  const onChangeWithDebounce = e => {
+class Input extends Component {
+  onChangeWithDebounce ( e ) {
     const { value } = e.target;
     clearTimeout( debounce );
     debounce = setTimeout(() => {
-      onChange( value );
+      this.props.onChange( value );
     }, 500 );
-  };
+  }
 
-  return (
-    <input
-      className={[
-        baseStyles.regular,
-        themeStyles.regular,
-      ].join( ' ' )}
-      defaultValue={ defaultValue }
-      name={ name }
-      onChange={ onChangeWithDebounce }
-      placeholder={ placeholder }
-    />
-  );
-};
+  render () {
+    return (
+      <input
+        className={[
+          baseStyles.regular,
+          themeStyles.regular,
+        ].join( ' ' )}
+        defaultValue={ this.props.defaultValue }
+        name={ this.props.name }
+        onChange={ e => this.onChangeWithDebounce( e )}
+        placeholder={ this.props.placeholder }
+      />
+    );
+  }
+}
 
 Input.propTypes = propTypes;
 

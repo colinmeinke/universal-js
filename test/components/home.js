@@ -20,9 +20,7 @@ describe( 'component', () => {
       const renderer = TestUtils.createRenderer();
 
       renderer.render(
-        <Home { ...props }>
-          <p></p>
-        </Home>
+        <Home { ...props } />
       );
 
       home = renderer.getRenderOutput();
@@ -30,8 +28,7 @@ describe( 'component', () => {
 
     it( 'should render correct markup', () => {
       expect( home.props.children.type ).toBe( 'section' );
-      expect( home.props.children.props.children[ 0 ].type ).toBe( Title );
-      expect( home.props.children.props.children[ 1 ].type ).toBe( 'p' );
+      expect( home.props.children.props.children.type ).toBe( Title );
     });
   });
 

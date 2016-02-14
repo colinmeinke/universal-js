@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { changePageTo } from 'universal-redux-router';
 
 import Button from '../Button';
@@ -8,35 +8,39 @@ import baseStyles from './base.css';
 
 const propTypes = {
   action: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
   inputName: PropTypes.string,
   inputPlaceholder: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
 
-const EditForm = ({ action, dispatch, inputName, inputPlaceholder, name }) => {
-  const onSubmit = e => {
+class EditForm extends Component {
+  onSubmit ( e ) {
     e.preventDefault();
-    dispatch( changePageTo([ '/', { name }]));
-  };
+    this.props.dispatch( changePageTo([ '/', { name: this.props.name }]));
+  }
 
-  return (
-    <form
-      action={ action }
-      className={ baseStyles.form }
-      method="GET"
-      onSubmit={ onSubmit }
-    >
-      <Input
-        name={ inputName }
-        placeholder={ inputPlaceholder }
-      />
-      <Button
-        text="Done"
-        type="submit"
-        updatingText="Saving"
-      />
-    </form>
-  );
-};
+  render () {
+    return (
+      <form
+        action={ this.props.action }
+        className={ baseStyles.form }
+        method="GET"
+        onSubmit={ e => this.onSubmit( e )}
+      >
+        <Input
+          name={ this.props.inputName }
+          placeholder={ this.props.inputPlaceholder }
+        />
+        <Button
+          text="Done"
+          type="submit"
+          updatingText="Saving"
+        />
+      </form>
+    );
+  }
+}
 
 EditForm.propTypes = propTypes;
 

@@ -1,3 +1,6 @@
 {
-  "extends": "spaced"
+  "extends": "spaced",
+  "rules": {
+    "react/jsx-no-bind": 0
+  }
 }
