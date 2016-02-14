@@ -22,13 +22,9 @@ export default {
       test: /\.json$/,
     }],
   },
-  postcss: function () {
+  postcss: function ( webpack ) {
     return [
-      atImport({
-        onImport: function ( files ) {
-          files.forEach( this.addDependency );
-        }.bind( this )
-      }),
+      atImport({ addDependencyTo: webpack }),
       customProps(),
       calcFunction(),
       colorFunction(),
