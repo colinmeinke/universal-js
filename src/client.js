@@ -13,4 +13,4 @@ configureStore({ url }).then( store => {
     <Root store={ store } />,
     document.querySelector( '.app' )
   );
-}).catch( console.error );
+}).catch( console.error.bind( console ));

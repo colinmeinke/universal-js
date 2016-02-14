@@ -49,7 +49,7 @@ const render = ({ url }, res ) => {
         title={ DocumentTitle.rewind() }
       />
     ).pipe( res );
-  }).catch( console.error );
+  }).catch( console.error.bind( console ));
 };
 
 app.use( render );
