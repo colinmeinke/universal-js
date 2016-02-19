@@ -49,6 +49,7 @@ export default {
   },
   plugins: [
     ...baseConfig.plugins,
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
