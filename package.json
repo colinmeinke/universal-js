@@ -61,7 +61,7 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "engines": {
-    "node": "5.7"
+    "node": "5.9"
   },
   "keywords": [
     "babel",
