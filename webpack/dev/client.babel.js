@@ -15,42 +15,28 @@ const externals = config.development.scripts
   .map( script => ({[ script.import ]: script.identifier }))
   .reduce(( prev, curr ) => ({ ...prev, ...curr }));
 
-const loaders = baseConfig.module.loaders.map( l => {
-  if ( l.loaders && l.loaders[ 0 ] === 'babel' ) {
-    return {
-      ...l,
-      loaders: [ 'babel?presets[]=react-hmre' ],
-    };
-  }
-
-  return l;
-});
-
-loaders.push({
+baseConfig.module.loaders.push({
   loaders: [ 'style', 'css?modules&sourceMap&importLoaders=1!postcss' ],
   test: /\.css$/,
 });
 
 export default {
   ...baseConfig,
-  devtool: 'source-map',
+  devtool: 'eval',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-dev-server/client?http://localhost:3001/',
+    'webpack/hot/only-dev-server',
+    'react-hot-loader/patch',
     baseConfig.entry,
   ],
   externals,
-  module: {
-    loaders: loaders,
-  },
   output: {
     ...baseConfig.output,
     filename: 'client.js',
-    publicPath: '/public/',
+    publicPath: 'http://localhost:3001/'
   },
   plugins: [
     ...baseConfig.plugins,
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
   ],
 };

@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'universal-redux-router';
 
@@ -15,18 +15,14 @@ const propTypes = {
   store: PropTypes.object.isRequired,
 };
 
-class Root extends Component {
-  render () {
-    return (
-      <Provider store={ this.props.store }>
-        <div>
-          <Router routes={ routes } />
-          { devTools }
-        </div>
-      </Provider>
-    );
-  }
-}
+const Root = ({ store }) => (
+  <Provider store={ store }>
+    <div>
+      <Router routes={ routes } />
+      { devTools }
+    </div>
+  </Provider>
+);
 
 Root.propTypes = propTypes;
 

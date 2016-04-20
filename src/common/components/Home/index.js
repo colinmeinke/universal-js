@@ -1,5 +1,6 @@
 import DocumentTitle from 'react-document-title';
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Title from '../Title';
 
@@ -7,21 +8,20 @@ const propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-class Home extends Component {
-  render () {
-    return (
-      <DocumentTitle title={ `Hello ${ this.props.name }` }>
-        <section>
-          <Title
-            text={ `Hello ${ this.props.name }` }
-            to={[ 'edit', { name: this.props.name }]}
-          />
-        </section>
-      </DocumentTitle>
-    );
-  }
-}
+const Home = ({ name }) => (
+  <DocumentTitle title={ `Hello ${ name }` }>
+    <section>
+      <Title
+        text={ `Hello ${ name }` }
+        to={[ 'edit', { name }]}
+      />
+    </section>
+  </DocumentTitle>
+);
 
 Home.propTypes = propTypes;
 
-export default Home;
+const mapStateToProps = ({ name }) => ({ name });
+
+export { Home };
+export default connect( mapStateToProps )( Home );

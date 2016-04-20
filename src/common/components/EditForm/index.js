@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { changePageTo } from 'universal-redux-router';
+import { connect } from 'react-redux';
 
 import Button from '../Button';
 import Input from '../Input';
@@ -14,34 +15,33 @@ const propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-class EditForm extends Component {
-  onSubmit ( e ) {
-    e.preventDefault();
-    this.props.dispatch( changePageTo([ '/', { name: this.props.name }]));
-  }
+const onSubmit = ({ dispatch, e, name }) => {
+  e.preventDefault();
+  dispatch( changePageTo([ '/', { name }]));
+};
 
-  render () {
-    return (
-      <form
-        action={ this.props.action }
-        className={ baseStyles.form }
-        method="GET"
-        onSubmit={ e => this.onSubmit( e )}
-      >
-        <Input
-          name={ this.props.inputName }
-          placeholder={ this.props.inputPlaceholder }
-        />
-        <Button
-          text="Done"
-          type="submit"
-          updatingText="Saving"
-        />
-      </form>
-    );
-  }
-}
+const EditForm = ({ action, dispatch, inputName, inputPlaceholder, name }) => (
+  <form
+    action={ action }
+    className={ baseStyles.form }
+    method="GET"
+    onSubmit={ e => onSubmit({ dispatch, e, name })}
+  >
+    <Input
+      name={ inputName }
+      placeholder={ inputPlaceholder }
+    />
+    <Button
+      text="Done"
+      type="submit"
+      updatingText="Saving"
+    />
+  </form>
+);
 
 EditForm.propTypes = propTypes;
 
-export default EditForm;
+const mapStateToProps = ({ name }) => ({ name });
+
+export { EditForm };
+export default connect( mapStateToProps, null )( EditForm );

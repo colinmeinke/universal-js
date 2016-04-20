@@ -1,9 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+
+import { updateName } from '../../actions/name';
+import { completeUpdate, requestUpdate } from '../../actions/isUpdating';
 
 import baseStyles from './base.css';
 import themeStyles from './oaxaca-theme.css';
-
-let debounce;
 
 const propTypes = {
   defaultValue: PropTypes.string,
@@ -12,31 +14,44 @@ const propTypes = {
   placeholder: PropTypes.string,
 };
 
-class Input extends Component {
-  onChangeWithDebounce ( e ) {
-    const { value } = e.target;
-    clearTimeout( debounce );
-    debounce = setTimeout(() => {
-      this.props.onChange( value );
-    }, 500 );
-  }
+let debounce;
 
-  render () {
-    return (
-      <input
-        className={[
-          baseStyles.regular,
-          themeStyles.regular,
-        ].join( ' ' )}
-        defaultValue={ this.props.defaultValue }
-        name={ this.props.name }
-        onChange={ e => this.onChangeWithDebounce( e )}
-        placeholder={ this.props.placeholder }
-      />
-    );
-  }
-}
+const onChangeWithDebounce = ({ e, onChange }) => {
+  const { value } = e.target;
+  clearTimeout( debounce );
+  debounce = setTimeout(() => {
+    onChange( value );
+  }, 500 );
+};
+
+const Input = ({ defaultValue, name, onChange, placeholder }) => (
+  <input
+    className={[
+      baseStyles.regular,
+      themeStyles.regular,
+    ].join( ' ' )}
+    defaultValue={ defaultValue }
+    name={ name }
+    onChange={ e => onChangeWithDebounce({ e, onChange })}
+    placeholder={ placeholder }
+  />
+);
 
 Input.propTypes = propTypes;
 
-export default Input;
+const mapStateToProps = ({ name }) => ({
+  defaultValue: name,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onChange: name => {
+    dispatch( requestUpdate());
+    setTimeout(() => {
+      dispatch( updateName( name ));
+      dispatch( completeUpdate());
+    }, 500 );
+  },
+});
+
+export { Input };
+export default connect( mapStateToProps, mapDispatchToProps )( Input );

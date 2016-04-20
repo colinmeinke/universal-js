@@ -11,6 +11,22 @@ import configureStore from './common/store/configureStore';
 import Root from './common/components/Root';
 import Page from './common/components/Page';
 
+if ( __DEVELOPMENT__ ) {
+  const webpack = require( 'webpack' );
+  const webpackConfig = require( '../webpack/dev/client.babel' ).default;
+  const WebpackDevServer = require( 'webpack-dev-server' );
+
+  new WebpackDevServer( webpack( webpackConfig ), {
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    historyApiFallback: true,
+    hot: true,
+    publicPath: webpackConfig.output.publicPath,
+    proxy: {
+     '*': 'http://localhost:3000/',
+    },
+  }).listen( 3001, 'localhost' );
+}
+
 const scripts = config[ __DEVELOPMENT__ ? 'development' : 'production' ].scripts
   .map( script => `/${ config.dir.js }/${ script.file.split( '/' ).pop() }` );
 
@@ -24,18 +40,6 @@ app.use( favicon( path.join(
 )));
 
 app.use( express.static( path.join( __dirname, '..', config.dir.static )));
-
-if ( __DEVELOPMENT__ ) {
-  const webpackConfig = require( '../webpack/dev/client.babel' ).default;
-  const compiler = require( 'webpack' )( webpackConfig );
-
-  app.use( require( 'webpack-dev-middleware' )( compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath,
-  }));
-
-  app.use( require( 'webpack-hot-middleware' )( compiler ));
-}
 
 const render = ({ url }, res ) => {
   configureStore({ isServer: true, url }).then( store => {
