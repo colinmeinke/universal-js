@@ -1,6 +1,6 @@
 import { REQUEST_UPDATE, COMPLETE_UPDATE } from '../actions/isUpdating';
 
-export default function isUpdating ( state = false, action ) {
+const isUpdating = ( state = false, action ) => {
   switch ( action.type ) {
     case REQUEST_UPDATE:
       return true;
@@ -9,4 +9,6 @@ export default function isUpdating ( state = false, action ) {
     default:
       return state;
   }
-}
+};
+
+export default isUpdating;
