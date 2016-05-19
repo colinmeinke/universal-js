@@ -11,17 +11,20 @@ const url = pathname + search + hash;
 
 configureStore({ url }).then( store => {
   render(
-    <AppContainer component={ Root } props={{ store }} />,
+    <AppContainer>
+      <Root store={ store } />
+    </AppContainer>,
     document.querySelector( '.app' )
   );
 
   if ( __DEVELOPMENT__ && module.hot ) {
     module.hot.accept([ './common/components/Root', './common/store/configureStore' ], () => {
+      const NextRoot = require( './common/components/Root' ).default;
+
       render(
-        <AppContainer
-          component={ require( './common/components/Root' ).default }
-          props={{ store }}
-        />,
+        <AppContainer>
+          <NextRoot store={ store } />
+        </AppContainer>,
         document.querySelector( '.app' )
       );
     });
