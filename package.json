@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "react": "^15.2.1",
+    "react": "^15.3.0",
     "react-document-title": "^2.0.2",
-    "react-dom": "^15.2.1",
+    "react-dom": "^15.3.0",
     "react-dom-stream": "^0.5.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
@@ -26,7 +26,7 @@
   "description": "A universal Javascript starter kit inc. React, Redux, Redux Dev Tools, Universal Redux Router, CSS Modules, hot module reloading, Babel for ES2015+ and ESLint.",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
-    "babel-core": "^6.10.4",
+    "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -52,14 +52,14 @@
     "postcss-custom-props": "^1.1.2",
     "postcss-import": "^8.1.0",
     "postcss-loader": "^0.9.1",
-    "react-addons-test-utils": "^15.2.1",
+    "react-addons-test-utils": "^15.3.0",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.1"
+    "webpack-hot-middleware": "^2.12.2"
   },
   "engines": {
     "node": "6"
