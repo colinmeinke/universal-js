@@ -1,3 +1,13 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/colinmeinke/universal-js/compare/v3.0.5...v3.1.0) (2016-10-11)
+
+
+### Features
+
+* **lint:** add standard code style ([a80fa52](https://github.com/colinmeinke/universal-js/commit/a80fa52))
+
+
+
 <a name="3.0.5"></a>
 ## [3.0.5](https://github.com/colinmeinke/universal-js/compare/v3.0.4...v3.0.5) (2016-02-19)
 
@@ -72,6 +82,7 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v2.0.0
 
 * **environment:** always bundle and run correct environment ([0fb3872](https://github.com/colinmeinke/universal-js/commit/0fb3872))
 
+
 ### Features
 
 * **hot:** hot reload redux reducers ([5ea0b0b](https://github.com/colinmeinke/universal-js/commit/5ea0b0b))
@@ -132,6 +143,7 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 * make root component a class to enable hot module reloading ([2f2c380](https://github.com/colinmeinke/universal-js/commit/2f2c380)), closes [#13](https://github.com/colinmeinke/universal-js/issues/13)
 
+
 ### Features
 
 * **css:** hot reload css and add sourcemap support ([0e662b9](https://github.com/colinmeinke/universal-js/commit/0e662b9))
@@ -165,7 +177,6 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 
 
-
 <a name="0.7.1"></a>
 ## [0.7.1](https://github.com/colinmeinke/universal-js/compare/v0.7.0...v0.7.1) (2016-01-12)
 
@@ -185,6 +196,7 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 * **npm:** add eslint-babel package that eslint-config-spaced now relies upon ([57c7454](https://github.com/colinmeinke/universal-js/commit/57c7454))
 
+
 ### Features
 
 * **styles:** move from inline styles to css modules ([3587aa1](https://github.com/colinmeinke/universal-js/commit/3587aa1)), closes [#1](https://github.com/colinmeinke/universal-js/issues/1)
@@ -196,10 +208,8 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 
 
-
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/colinmeinke/universal-js/compare/v0.4.0...v0.5.1) (2015-10-31)
-
 
 
 
@@ -208,10 +218,8 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 
 
-
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/colinmeinke/universal-js/compare/v0.3.0...v0.3.1) (2015-10-05)
-
 
 
 
@@ -220,10 +228,8 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 
 
-
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/colinmeinke/universal-js/compare/v0.2.0...v0.2.1) (2015-10-05)
-
 
 
 
@@ -232,16 +238,13 @@ https://github.com/colinmeinke/universal-redux-router/releases/tag/v1.0.0
 
 
 
-
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/colinmeinke/universal-js/compare/v0.1.0...v0.1.1) (2015-10-04)
 
 
 
-
 <a name="0.1.0"></a>
 # 0.1.0 (2015-10-03)
-
 
 
 
