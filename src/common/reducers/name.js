@@ -1,12 +1,12 @@
-import { UPDATE_NAME } from '../actions/name';
+import { UPDATE_NAME } from '../actions/name'
 
-const name = ( state = '', action ) => {
-  switch ( action.type ) {
+const name = (state = '', action) => {
+  switch (action.type) {
     case UPDATE_NAME:
-      return action.name;
+      return action.name
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default name;
+export default name

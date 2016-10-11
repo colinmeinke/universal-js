@@ -1,17 +1,15 @@
-import webpack from 'webpack';
-
-import proConfig from '../pro';
-import serverConfig from '../server';
+import proConfig from '../pro'
+import serverConfig from '../server'
 
 const baseConfig = {
   ...serverConfig,
-  ...proConfig,
-};
+  ...proConfig
+}
 
 export default {
   ...baseConfig,
   output: {
     ...baseConfig.output,
-    filename: 'server.min.js',
-  },
-};
+    filename: 'server.min.js'
+  }
+}

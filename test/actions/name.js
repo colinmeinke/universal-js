@@ -1,20 +1,22 @@
-import expect from 'expect';
+/* eslint-env mocha */
 
-import { UPDATE_NAME, updateName } from '../../src/common/actions/name';
+import expect from 'expect'
 
-describe( 'action creator', () => {
-  describe( 'name', () => {
-    describe( 'updateName()', () => {
-      it( 'should create an action to update name', () => {
-        const name = 'Colin';
+import { UPDATE_NAME, updateName } from '../../src/common/actions/name'
+
+describe('action creator', () => {
+  describe('name', () => {
+    describe('updateName()', () => {
+      it('should create an action to update name', () => {
+        const name = 'Colin'
 
         const expectedAction = {
           type: UPDATE_NAME,
-          name,
-        };
+          name
+        }
 
-        expect( updateName( name )).toEqual( expectedAction );
-      });
-    });
-  });
-});
+        expect(updateName(name)).toEqual(expectedAction)
+      })
+    })
+  })
+})

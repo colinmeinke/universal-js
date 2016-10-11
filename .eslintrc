@@ -1,7 +1,0 @@
-{
-  extends: 'spaced',
-  rules: {
-    'react/jsx-no-bind': 0,
-    'react/prefer-stateless-function': 0,
-  }
-}

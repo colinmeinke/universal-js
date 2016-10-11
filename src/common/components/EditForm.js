@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import EditForm from './EditForm/index';
+import EditForm from './EditForm/index'
 
-const mapStateToProps = ({ name }) => ({ name });
+const mapStateToProps = ({ name }) => ({ name })
 
-export default connect( mapStateToProps, null )( EditForm );
+export default connect(mapStateToProps, null)(EditForm)

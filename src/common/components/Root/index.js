@@ -1,33 +1,35 @@
-import React, { Component, PropTypes } from 'react';
-import { Provider } from 'react-redux';
-import { Router } from 'universal-redux-router';
+/* global __DEVELOPMENT__ */
 
-import routes from '../../config/routes';
+import React, { Component, PropTypes } from 'react'
+import { Provider } from 'react-redux'
+import { Router } from 'universal-redux-router'
 
-let devTools;
+import routes from '../../config/routes'
 
-if ( __DEVELOPMENT__ ) {
-  const DevTools = require( '../DevTools' ).default;
-  devTools = <DevTools />;
+let devTools
+
+if (__DEVELOPMENT__) {
+  const DevTools = require('../DevTools').default
+  devTools = <DevTools />
 }
 
 const propTypes = {
-  store: PropTypes.object.isRequired,
-};
+  store: PropTypes.object.isRequired
+}
 
 class Root extends Component {
   render () {
     return (
-      <Provider store={ this.props.store }>
+      <Provider store={this.props.store}>
         <div>
-          <Router routes={ routes } />
+          <Router routes={routes} />
           { devTools }
         </div>
       </Provider>
-    );
+    )
   }
 }
 
-Root.propTypes = propTypes;
+Root.propTypes = propTypes
 
-export default Root;
+export default Root

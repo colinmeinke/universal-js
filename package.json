@@ -27,7 +27,6 @@
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",
-    "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
@@ -37,11 +36,6 @@
     "conventional-changelog-cli": "^1.2.0",
     "css-loader": "^0.25.0",
     "cz-conventional-changelog": "^1.2.0",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb": "^7.0.0",
-    "eslint-config-spaced": "^4.0.2",
-    "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^4.3.0",
     "expect": "^1.20.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "json": "^9.0.4",
@@ -56,6 +50,8 @@
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
+    "snazzy": "^5.0.0",
+    "standard": "^8.4.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4",
@@ -79,6 +75,7 @@
     "react",
     "redux",
     "redux dev tools",
+    "standard",
     "starter kit",
     "universal",
     "universal redux router",
@@ -108,11 +105,12 @@
     "createStaticCss:pro": "mkdir -p ./static/css && cat ./src/common/config/index.json | json production.styles | json -ga | xargs -I % cp % ./static/css/",
     "createStaticJs:dev": "mkdir -p ./static/js && cp ./dist/client.js.map ./static/js/ && cat ./src/common/config/index.json | json development.scripts | json -ga file | xargs -I % cp % ./static/js/",
     "createStaticJs:pro": "mkdir -p ./static/js && cat ./src/common/config/index.json | json production.scripts | json -ga file | xargs -I % cp % ./static/js/",
-    "lint": "eslint src test",
+    "fix": "standard --fix",
+    "lint": "standard --verbose | snazzy",
     "start": "npm run start:pro",
     "start:dev": "NODE_ENV=development node ./dist/server.js",
     "start:pro": "NODE_ENV=production node ./dist/server.min.js",
     "test": "mocha --compilers js:babel-core/register,css:test/compiler.js test/**/*.js"
   },
-  "version": "3.0.5"
+  "version": "3.1.0"
 }

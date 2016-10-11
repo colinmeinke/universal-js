@@ -1,21 +1,23 @@
-import React from 'react';
+/* global __DEVELOPMENT__ */
 
-import Home from '../components/Home';
-import Edit from '../components/Edit';
+import React from 'react'
 
-import { updateName } from '../actions/name';
+import Home from '../components/Home'
+import Edit from '../components/Edit'
+
+import { updateName } from '../actions/name'
 
 const getRoutes = () => ([
   [ '/', { name: updateName }, <Home /> ],
   [ 'edit', { name: updateName }, <Edit /> ],
-  [ '*', <h1>Not found</h1> ],
-]);
+  [ '*', <h1>Not found</h1> ]
+])
 
-let routes = getRoutes();
+let routes = getRoutes()
 
-if ( __DEVELOPMENT__ && module.hot ) {
-  module.hot.accept();
-  routes = getRoutes();
+if (__DEVELOPMENT__ && module.hot) {
+  module.hot.accept()
+  routes = getRoutes()
 }
 
-export default routes;
+export default routes

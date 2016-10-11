@@ -1,4 +1,4 @@
-import isUpdating from './isUpdating';
-import name from './name';
+import isUpdating from './isUpdating'
+import name from './name'
 
-export { isUpdating, name };
+export { isUpdating, name }

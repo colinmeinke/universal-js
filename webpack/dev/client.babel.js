@@ -1,56 +1,56 @@
-import webpack from 'webpack';
+import webpack from 'webpack'
 
-import config from '../../src/common/config';
+import config from '../../src/common/config'
 
-import clientConfig from '../client';
-import devConfig from '../dev';
+import clientConfig from '../client'
+import devConfig from '../dev'
 
 const baseConfig = {
   ...clientConfig,
-  ...devConfig,
-};
+  ...devConfig
+}
 
 const externals = config.development.scripts
-  .filter( script => script.import )
-  .map( script => ({[ script.import ]: script.identifier }))
-  .reduce(( prev, curr ) => ({ ...prev, ...curr }));
+  .filter(script => script.import)
+  .map(script => ({ [ script.import ]: script.identifier }))
+  .reduce((prev, curr) => ({ ...prev, ...curr }))
 
-const loaders = baseConfig.module.loaders.map( l => {
-  if ( l.loaders && l.loaders[ 0 ] === 'babel' ) {
+const loaders = baseConfig.module.loaders.map(l => {
+  if (l.loaders && l.loaders[ 0 ] === 'babel') {
     return {
       ...l,
-      loaders: [ 'babel?presets[]=react-hmre' ],
-    };
+      loaders: [ 'babel?presets[]=react-hmre' ]
+    }
   }
 
-  return l;
-});
+  return l
+})
 
 loaders.push({
   loaders: [ 'style', 'css?modules&sourceMap&importLoaders=1!postcss' ],
-  test: /\.css$/,
-});
+  test: /\.css$/
+})
 
 export default {
   ...baseConfig,
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    baseConfig.entry,
+    baseConfig.entry
   ],
   externals,
   module: {
-    loaders: loaders,
+    loaders: loaders
   },
   output: {
     ...baseConfig.output,
     filename: 'client.js',
-    publicPath: '/public/',
+    publicPath: '/public/'
   },
   plugins: [
     ...baseConfig.plugins,
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-  ],
-};
+    new webpack.NoErrorsPlugin()
+  ]
+}

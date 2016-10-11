@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import Button from './Button/index';
+import Button from './Button/index'
 
-const mapStateToProps = ({ isUpdating }) => ({ isUpdating });
+const mapStateToProps = ({ isUpdating }) => ({ isUpdating })
 
-export default connect( mapStateToProps )( Button );
+export default connect(mapStateToProps)(Button)

@@ -1,3 +1,3 @@
-const noop = () => null;
+const noop = () => null
 
-require.extensions[ '.css' ] = noop;
+require.extensions[ '.css' ] = noop

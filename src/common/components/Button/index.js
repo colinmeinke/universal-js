@@ -1,18 +1,18 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 
-import baseStyles from './base.css';
-import themeStyles from './oaxaca-theme.css';
+import baseStyles from './base.css'
+import themeStyles from './oaxaca-theme.css'
 
 const defaultProps = {
-  type: 'button',
-};
+  type: 'button'
+}
 
 const propTypes = {
   isUpdating: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   type: PropTypes.string,
-  updatingText: PropTypes.string.isRequired,
-};
+  updatingText: PropTypes.string.isRequired
+}
 
 class Button extends Component {
   render () {
@@ -21,20 +21,20 @@ class Button extends Component {
         className={[
           baseStyles.regular,
           themeStyles.regular,
-          ...( this.props.isUpdating ? [
+          ...(this.props.isUpdating ? [
             baseStyles.updating,
-            themeStyles.updating,
-          ] : []),
-        ].join( ' ' )}
-        type={ this.props.type }
+            themeStyles.updating
+          ] : [])
+        ].join(' ')}
+        type={this.props.type}
       >
         { this.props.isUpdating ? this.props.updatingText : this.props.text }
       </button>
-    );
+    )
   }
 }
 
-Button.defaultProps = defaultProps;
-Button.propTypes = propTypes;
+Button.defaultProps = defaultProps
+Button.propTypes = propTypes
 
-export default Button;
+export default Button

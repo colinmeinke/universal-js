@@ -1,13 +1,13 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 
-import baseStyles from './base.css';
-import themeStyles from './oaxaca-theme.css';
+import baseStyles from './base.css'
+import themeStyles from './oaxaca-theme.css'
 
 const defaultProps = {
   language: 'en',
   scripts: [],
-  styles: [],
-};
+  styles: []
+}
 
 const propTypes = {
   app: PropTypes.object,
@@ -15,8 +15,8 @@ const propTypes = {
   language: PropTypes.string,
   scripts: PropTypes.array,
   styles: PropTypes.array,
-  title: PropTypes.string,
-};
+  title: PropTypes.string
+}
 
 class Page extends Component {
   render () {
@@ -24,46 +24,46 @@ class Page extends Component {
       <html
         className={[
           baseStyles.html,
-          themeStyles.html,
-        ].join( ' ' )}
-        lang={ this.props.language }
+          themeStyles.html
+        ].join(' ')}
+        lang={this.props.language}
       >
         <head>
-          <meta charSet="utf-8" />
+          <meta charSet='utf-8' />
           <meta
-            content="ie=edge"
-            httpEquiv="x-ua-compatible"
+            content='ie=edge'
+            httpEquiv='x-ua-compatible'
           />
           <title>{ this.props.title }</title>
           <meta
-            content={ this.props.description }
-            name="description"
+            content={this.props.description}
+            name='description'
           />
           <meta
-            content="width=device-width, initial-scale=1"
-            name="viewport"
+            content='width=device-width, initial-scale=1'
+            name='viewport'
           />
-          { this.props.styles.map(( style, i ) => (
-            <link href={ style } key={ i } rel="stylesheet" />
+          { this.props.styles.map((style, i) => (
+            <link href={style} key={i} rel='stylesheet' />
           ))}
         </head>
         <body
-          className={ baseStyles.body }
+          className={baseStyles.body}
         >
           <section
-            className="app"
+            className='app'
             dangerouslySetInnerHTML={{ __html: this.props.app }}
           />
-          { this.props.scripts.map(( script, i ) => (
-            <script key={ i } src={ script } />
+          { this.props.scripts.map((script, i) => (
+            <script key={i} src={script} />
           ))}
         </body>
       </html>
-    );
+    )
   }
 }
 
-Page.defaultProps = defaultProps;
-Page.propTypes = propTypes;
+Page.defaultProps = defaultProps
+Page.propTypes = propTypes
 
-export default Page;
+export default Page

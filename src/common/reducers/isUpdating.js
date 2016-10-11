@@ -1,14 +1,14 @@
-import { REQUEST_UPDATE, COMPLETE_UPDATE } from '../actions/isUpdating';
+import { REQUEST_UPDATE, COMPLETE_UPDATE } from '../actions/isUpdating'
 
-const isUpdating = ( state = false, action ) => {
-  switch ( action.type ) {
+const isUpdating = (state = false, action) => {
+  switch (action.type) {
     case REQUEST_UPDATE:
-      return true;
+      return true
     case COMPLETE_UPDATE:
-      return false;
+      return false
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default isUpdating;
+export default isUpdating

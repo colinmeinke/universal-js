@@ -345,10 +345,8 @@ solves this.
 Maintaining a consistent coding style is important, especially
 when there is more than one contributor.
 
-`npm run lint` will run ESLint on the Javascript using my
-[spaced config](https://github.com/colinmeinke/eslint-config-spaced)
-rules, an extension of
-[Airbnb's config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
+`npm run lint` will run ESLint on the Javascript using
+[standard style](https://github.com/feross/standard).
 
 ### Commitizen
 

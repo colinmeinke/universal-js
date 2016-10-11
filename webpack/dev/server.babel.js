@@ -1,13 +1,12 @@
-import webpack from 'webpack';
-import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin';
+import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin'
 
-import devConfig from '../dev';
-import serverConfig from '../server';
+import devConfig from '../dev'
+import serverConfig from '../server'
 
 const baseConfig = {
   ...serverConfig,
-  ...devConfig,
-};
+  ...devConfig
+}
 
 export default {
   ...baseConfig,
@@ -15,26 +14,26 @@ export default {
     loaders: [
       ...baseConfig.module.loaders,
       {
-       exclude: /\/Page/,
-       loader: 'css-loader?modules',
-       test: /\.css$/,
+        exclude: /\/Page/,
+        loader: 'css-loader?modules',
+        test: /\.css$/
       },
       {
-       include: /\/Page/,
-       loader: ExtractTextWebpackPlugin.extract(
+        include: /\/Page/,
+        loader: ExtractTextWebpackPlugin.extract(
          'style',
          'css?modules&importLoaders=1!postcss'
        ),
-       test: /\.css$/,
-      },
-    ],
+        test: /\.css$/
+      }
+    ]
   },
   output: {
     ...baseConfig.output,
-    filename: 'server.js',
+    filename: 'server.js'
   },
   plugins: [
     ...baseConfig.plugins,
-    new ExtractTextWebpackPlugin( 'styles.css' ),
-  ],
-};
+    new ExtractTextWebpackPlugin('styles.css')
+  ]
+}

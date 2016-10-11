@@ -1,9 +1,9 @@
-const COMPLETE_UPDATE = 'COMPLETE_UPDATE';
+const COMPLETE_UPDATE = 'COMPLETE_UPDATE'
 
-const REQUEST_UPDATE = 'REQUEST_UPDATE';
+const REQUEST_UPDATE = 'REQUEST_UPDATE'
 
-const completeUpdate = () => ({ type: COMPLETE_UPDATE });
+const completeUpdate = () => ({ type: COMPLETE_UPDATE })
 
-const requestUpdate = () => ({ type: REQUEST_UPDATE });
+const requestUpdate = () => ({ type: REQUEST_UPDATE })
 
-export { COMPLETE_UPDATE, REQUEST_UPDATE, completeUpdate, requestUpdate };
+export { COMPLETE_UPDATE, REQUEST_UPDATE, completeUpdate, requestUpdate }

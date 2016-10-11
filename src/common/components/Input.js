@@ -1,22 +1,22 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import { updateName } from '../actions/name';
-import { completeUpdate, requestUpdate } from '../actions/isUpdating';
+import { updateName } from '../actions/name'
+import { completeUpdate, requestUpdate } from '../actions/isUpdating'
 
-import Input from './Input/index';
+import Input from './Input/index'
 
 const mapStateToProps = ({ name }) => ({
-  defaultValue: name,
-});
+  defaultValue: name
+})
 
 const mapDispatchToProps = dispatch => ({
   onChange: name => {
-    dispatch( requestUpdate());
+    dispatch(requestUpdate())
     setTimeout(() => {
-      dispatch( updateName( name ));
-      dispatch( completeUpdate());
-    }, 500 );
-  },
-});
+      dispatch(updateName(name))
+      dispatch(completeUpdate())
+    }, 500)
+  }
+})
 
-export default connect( mapStateToProps, mapDispatchToProps )( Input );
+export default connect(mapStateToProps, mapDispatchToProps)(Input)

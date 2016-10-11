@@ -1,3 +1,3 @@
 export default {
-  entry: './src/client',
-};
+  entry: './src/client'
+}
