@@ -2,3 +2,5 @@ dist/
 node_modules/
 static/css/
 static/js/
+yarn-error.log
+yarn.error
